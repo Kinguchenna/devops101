@@ -1,0 +1,64 @@
+{% load static %}
+
+<header class="tj-header-sticky header-sticky d-none">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="tj-header-bottom-wrapper">
+                    <div class="tj-header-sticky-mobile-logo">
+                        <a href="/">
+                            <img src="{% static 'assets/images/logo/freshfix05.png' %}" alt="Logos">
+                        </a>
+                    </div>
+                    <div class="tj-header-bottom-left d-none d-xl-block">
+                        <div class="mainmenu-wrapper">
+                            <div class="mainmenu-box">
+                                {% include 'partials/mainmenu.html' %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tj-header-bottom-right">
+                        <div class="tj-header-bottom-search d-none d-xl-block">
+                            <button class="tj-header-search tj-search-popup"><i class="fa-regular fa-magnifying-glass"></i></button>
+                        </div>
+
+                        <div class="tj-header-bottom-cart d-none d-sm-block">
+                            {% if user.is_authenticated %}
+                            <!-- Show Logout Link if the user is logged in -->
+                            <a href="{% url 'fresh:dashboard' %}" class=""><i class="flaticon-user"></i></a> <!-- Replace with appropriate logout icon -->
+                        {% else %}
+                            <!-- Show Register Link if the user is not logged in -->
+                            <a href="{% url 'fresh:register' %}" class=""><i class="flaticon-user"></i></a>
+                        {% endif %}
+                        </div>
+                        <div class="tj-header-bottom-mobile-button d-block d-xl-none">
+                            {% if user.is_authenticated %}
+                            <!-- Show Logout Link if the user is logged in -->
+                            <a href="{% url 'fresh:dashboard' %}" class=""><i class="flaticon-user"></i></a> <!-- Replace with appropriate logout icon -->
+                        {% else %}
+                            <!-- Show Register Link if the user is not logged in -->
+                            <a href="{% url 'fresh:register' %}" class=""><i class="flaticon-user"></i></a>
+                        {% endif %}
+                        </div>
+
+
+                        <div class="tj-header-bottom-mobile-button d-block d-xl-none">
+                            <button class="tj-header-bottom-mobile-btn menu-bar">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+
+                        <div class="tj-header-sticky-button d-none d-md-block">
+                            <a class="tj-primary-btn tj-hover-btn" href="{% url  'fresh:contact' %}"><span>Get a quote <i class="flaticon-start"></i></span>
+                                <div class="tj-hover-btn-circle-dot"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,311 @@
+ 
+{% extends 'admin/base.html' %}
+{% load static %}
+
+    <!--End header-->
+    
+    {% block meta_tags %}
+        <meta name="description" content="International School & Job Portal - Admissions and Career Opportunities for Global Students and Professionals">
+        <meta name="keywords" content="International School, Admissions, Job Portal, Career Opportunities, Global Students, Global Jobs, Education, Apply Now, Employment, University, Scholarships">
+        <title>International School & Job Portal - Admissions & Career Opportunities</title>
+    {% endblock meta_tags %}
+
+    
+
+
+{%  block content %}
+
+
+<body>
+    <!-- tap on top start -->
+    <div class="tap-top">
+        <span class="lnr lnr-chevron-up"></span>
+    </div>
+    <!-- tap on tap end -->
+
+    <!-- page-wrapper start -->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+        <!-- Page Header Start-->
+        {% include 'admin/header.html' %}
+        <!-- Page Header Ends-->
+
+        <!-- Page Body start -->
+        <div class="page-body-wrapper">
+            <!-- Page Sidebar Start-->
+            {% include 'admin/sidebar.html' %}
+            <!-- Page Sidebar Ends-->
+
+            <div class="page-body">
+
+                <!-- New Product Add Start -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-sm-8 m-auto">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-header-2">
+                                                <h5>About Information</h5>
+                                            </div>
+                                            <form class="theme-form theme-form-2 mega-form" id="addSliderForm" enctype="multipart/form-data" method="post">
+                                                <!-- CSRF Token -->
+                                                {% csrf_token %}
+                                            
+                                                <!-- Subtitle -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="subTitle">Subtitle</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" id="subTitle" value="{{ about.sub_title }}" name="sub_title" placeholder="Enter Subtitle">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Title -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="title">Title</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" id="title" value="{{ about.title }}" name="title" placeholder="Enter Title">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Paragraph -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="paragraph">Paragraph</label>
+                                                    <div class="col-sm-9">
+                                                        <textarea class="form-control" id="paragraph" name="paragraph" rows="4" placeholder="Enter Description Paragraph">{{ about.paragraph }}</textarea>
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Button Text -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="btnText">Button Text</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="{{ about.btntext }}" id="btnText" name="btntext" placeholder="Enter Button Text">
+                                                    </div>
+                                                </div>
+                                            
+                                                <input type="hidden" name="aboutId" id="aboutId" value="{{ about.id }}">
+                                            
+                                                <!-- List One -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="list_one">List One</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="{{ about.list_one }}" id="list_one" name="list_one" placeholder="List One">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- List Two -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="list_two">List Two</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="{{ about.list_two }}" id="list_two" name="list_two" placeholder="List Two">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- List Three -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="list_three">List Three</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="{{ about.list_three }}" id="list_three" name="list_three" placeholder="List Three">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Background Image -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="backgroundImage">Background Image</label>
+                                                    <div class="col-sm-9">
+                                                        {% if about.background_image %}
+                                                            <img src="{{ about.background_image.url }}" alt="Current Background Image" style="max-height: 150px; display: block; margin-bottom: 10px;">
+                                                        {% endif %}
+                                                        <input class="form-control form-choose" type="file" id="backgroundImage" name="background_image">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Slider Image -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="sliderImage">Slider Image</label>
+                                                    <div class="col-sm-9">
+                                                        {% if about.slider_image %}
+                                                            <img src="{{ about.slider_image.url }}" alt="Current Slider Image" style="max-height: 150px; display: block; margin-bottom: 10px;">
+                                                        {% endif %}
+                                                        <input class="form-control form-choose" type="file" id="sliderImage" name="slider_image">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Profile Image -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="profile_image">Profile Image</label>
+                                                    <div class="col-sm-9">
+                                                        {% if about.profile %}
+                                                            <img src="{{ about.profile.url }}" alt="Current Profile Image" style="max-height: 50px; display: block; margin-bottom: 10px;">
+                                                        {% endif %}
+                                                        <input class="form-control form-choose" type="file" id="profile_image" name="profile_image">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- CEO -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="name">CEO</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="{{ about.name }}" id="name" name="name" placeholder="CEO">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Job -->
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-sm-3 mb-0" for="job">Job</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" type="text" value="{{ about.job }}" id="job" name="job" placeholder="Job">
+                                                    </div>
+                                                </div>
+                                            
+                                                <!-- Submit Button -->
+                                                <div class="text-end">
+                                                    <button type="submit" class="btn btn-primary" id="addSliderButton">Edit About</button>
+                                                </div>
+                                            </form>
+                                            
+                                            
+                                            <!-- Response Message -->
+                                            <div id="responseMessage"></div>
+                                            
+                                
+                                            <!-- Response Message -->
+                                            <div id="responseMessage" class="mt-3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Product Add End -->
+
+                <!-- footer Start -->
+                <div class="container-fluid">
+                    <footer class="footer">
+                        <div class="row">
+                            <div class="col-md-12 footer-copyright text-center">
+                                <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <!-- footer En -->
+            </div>
+            <!-- Container-fluid End -->
+        </div>
+        <!-- Page Body End -->
+    </div>
+    <!-- page-wrapper End -->
+
+    <!-- Modal Start -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+                    <p>Are you sure you want to log out?</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="button-box">
+                        <button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn  btn--yes btn-primary">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#addSliderForm').on('submit', function (event) {
+                event.preventDefault();
+    
+                // Disable button and show loading state
+                const submitButton = $('#addSliderButton');
+                const responseMessage = $('#responseMessage');
+                submitButton.text('Editing...').attr('disabled', true);
+                responseMessage.html('');
+    
+                // Collect form values
+                const subTitle = $('#subTitle').val();
+                const title = $('#title').val();
+                const paragraph = $('#paragraph').val();
+                const btnText = $('#btnText').val();
+                const aboutId = $('#aboutId').val();
+                const list_one = $('#list_one').val();
+                const list_two = $('#list_two').val();
+                const list_three = $('#list_three').val();
+                const name = $('#name').val();
+                const job = $('#job').val();
+                const csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    
+                // Validate if all required fields are filled
+                if (!subTitle || !title || !paragraph || !btnText || !aboutId) {
+                    responseMessage.html('<div class="alert alert-danger">Please fill all required fields.</div>');
+                    submitButton.text('Edit Slider').attr('disabled', false);
+                    return;
+                }
+    
+                // Collect file data
+                const bgImage = $('#backgroundImage')[0].files[0];
+                const sliderImg = $('#sliderImage')[0].files[0];
+                const profileImg = $('#profile_image')[0].files[0];
+    
+                // Prepare FormData object
+                const formData = new FormData();
+                formData.append('subTitle', subTitle);
+                formData.append('title', title);
+                formData.append('paragraph', paragraph);
+                formData.append('btnText', btnText);
+                formData.append('aboutId', aboutId);
+                formData.append('list_one', list_one);
+                formData.append('list_two', list_two);
+                formData.append('list_three', list_three);
+                formData.append('name', name);
+                formData.append('job', job);
+                formData.append('csrfmiddlewaretoken', csrfToken);
+    
+                // Append files if available
+                if (bgImage) formData.append('background_image', bgImage);
+                if (sliderImg) formData.append('slider_image', sliderImg);
+                if (profileImg) formData.append('profile_image', profileImg);
+    
+                // Send AJAX request
+                $.ajax({
+                    url: "{% url 'fresh:editabout' %}", // Adjust this to your actual URL
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        responseMessage.html('<div class="alert alert-success">' + response.message + '</div>');
+                        submitButton.text('Edit Slider').attr('disabled', false);
+                        $('#addSliderForm')[0].reset();
+                    },
+                    error: function (xhr) {
+                        const errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'An error occurred. Please try again.';
+                        responseMessage.html('<div class="alert alert-danger">' + errorMessage + '</div>');
+                        submitButton.text('Edit Slider').attr('disabled', false);
+                    }
+                });
+            });
+        });
+    </script>
+    
+
+    
+    
+    
+    
+
+</body>
+
+{% endblock content %}

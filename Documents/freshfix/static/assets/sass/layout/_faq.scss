@@ -1,0 +1,167 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Faq CSS
+----------------------------------------*/
+
+.tj-faq {
+
+    // Home Two Scss
+
+    &-2 {
+        &-area {
+            background: var(--tj-color-grey-3);
+            position: relative;
+            z-index: 1;
+            .tj-faq-2-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 875px;
+                width: 100%;
+                z-index: -1;
+                img {
+                    width: 100%;
+                }
+            }
+            .tj-section-wrapper {
+                margin-bottom: 30px;
+            }
+        }
+        &-bg-shape {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+        &-wrapper {
+            background: var(--tj-color-common-white);
+            margin: 110px 78px 110px 0;
+            border-radius: 10px;
+            padding: 50px;
+            @media #{$xl} {
+                margin: 120px 40px 120px 0;
+                padding: 50px 30px;
+            }
+            @media #{$lg} {
+                margin: 120px 0px 120px 0px;
+                padding: 35px 15px;
+            }
+            @media #{$md} {
+                margin: 80px 0 50px 0;
+            }
+            @media #{$sm} {
+                margin: 80px 0 50px 0;
+                padding: 50px 20px;
+            }
+            @media #{$xs} {
+                margin: 80px 0 40px;
+                padding: 30px 15px;
+            }
+        }
+        &-accordion {
+            &.two {
+                @media #{$md,$sm,$xs} {
+                    margin-bottom: 60px;
+                }
+            }
+        }
+        &-accordion-item {
+            padding: 30px 25px 15px;
+            margin-bottom: 22px;
+            border: 1px solid #D8DDE1 !important;
+            border-radius: 5px !important;
+            @media #{$sm, $xs} {
+                padding: 20px 15px 10px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &-accordion-title {
+            color: var(--tj-color-heading-primary);
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-sbold);
+            font-size: 20px;
+            border-bottom: 1px solid transparent !important;
+            padding-bottom: 15px;
+            @media #{$sm} {
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            @media #{$xs} {
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            &::before {
+                position: absolute;
+                content: "\f06e";
+                font-family: "Font Awesome 6 Pro";
+                right: 0;
+                color: var(--tj-color-heading-primary);
+                transition: .6s;
+                opacity: 0;
+                visibility: hidden;
+                font-weight: 400;
+            }
+            &::after {
+                position: absolute;
+                content: "\f070";
+                font-family: "Font Awesome 6 Pro";
+                right: 0;
+                color: var(--tj-color-heading-primary);
+                transition: .6s;
+                font-weight: 400;
+            }
+            &:not(.collapsed) {
+                border-bottom: 1px solid #D8DDE1 !important;
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                    color: var(--tj-color-theme-primary);
+                }
+                &::after {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+
+        }
+        &-accordion-pera {
+            padding: 20px 0;
+            @media #{$xs} {
+                font-size: 15px;
+            }
+        }
+        &-thumb {
+            margin-left: -50px;
+            @media #{$lg} {
+                margin-left: 0;
+            }
+            @media #{$md,$sm} {
+                margin-left: 0;
+                text-align: center;
+            }
+            @media #{$xs} {
+                margin-left: 0;
+                text-align: center;
+            }
+            & img {
+                max-width: 698px;
+                @media #{$lg} {
+                    max-width: 535px;
+                }
+                @media #{$sm} {
+                    max-width: 500px;
+                }
+                @media #{$xs} {
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Faq CSS */
+
+

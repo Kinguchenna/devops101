@@ -1,0 +1,263 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+<!--End header-->
+
+{% block meta_tags %}
+<meta name="description"
+    content="International School & Job Portal - Admissions and Career Opportunities for Global Students and Professionals">
+<meta name="keywords"
+    content="International School, Admissions, Job Portal, Career Opportunities, Global Students, Global Jobs, Education, Apply Now, Employment, University, Scholarships">
+<title>International School & Job Portal - Admissions & Career Opportunities</title>
+{% endblock meta_tags %}
+
+
+
+
+{% block content %}
+
+
+<body>
+    <!-- tap on top start -->
+    <div class="tap-top">
+        <span class="lnr lnr-chevron-up"></span>
+    </div>
+    <!-- tap on tap end -->
+
+    <!-- page-wrapper start -->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+        <!-- Page Header Start-->
+        {% include 'admin/header.html' %}
+        <!-- Page Header Ends-->
+
+        <!-- Page Body start -->
+        <div class="page-body-wrapper">
+            <!-- Page Sidebar Start-->
+            {% include 'admin/sidebar.html' %}
+            <!-- Page Sidebar Ends-->
+
+            <div class="page-body">
+
+                <!-- New Product Add Start -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-sm-8 m-auto">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-header-2">
+                                                <h5>Upadte Contact and Address Information</h5>
+                                            </div>
+                                            <input type="hidden" name="contactId" id="contactId" value="{{contact.id}}">
+                                            
+                                            <form class="theme-form theme-form-2 mega-form" id="editContactForm">
+                                                <!-- Email One -->
+                                                <div class="mb-3">
+                                                    <label for="emailone" class="form-label">Primary Email <span class="text-danger">*</span></label>
+                                                    <input type="email" class="form-control" id="emailone" value="{{ contact.emailone }}" placeholder="Enter primary email" required>
+                                                </div>
+                                            
+                                                <!-- Email Two -->
+                                                <div class="mb-3">
+                                                    <label for="emailtwo" class="form-label">Secondary Email</label>
+                                                    <input type="email" class="form-control" id="emailtwo" value="{{ contact.emailtwo }}" placeholder="Enter secondary email">
+                                                </div>
+                                            
+                                                <!-- Phone One -->
+                                                <div class="mb-3">
+                                                    <label for="phoneone" class="form-label">Primary Phone <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" id="phoneone" value="{{ contact.phoneone }}" placeholder="Enter primary phone" required>
+                                                </div>
+                                            
+                                                <!-- Phone Two -->
+                                                <div class="mb-3">
+                                                    <label for="phonetwo" class="form-label">Secondary Phone</label>
+                                                    <input type="text" class="form-control" id="phonetwo" value="{{ contact.phonetwo }}" placeholder="Enter secondary phone">
+                                                </div>
+                                            
+                                                <!-- Address One -->
+                                                <div class="mb-3">
+                                                    <label for="addressone" class="form-label">Primary Address</label>
+                                                    <textarea class="form-control" id="addressone" rows="2" placeholder="Enter primary address">{{ contact.addressone }}</textarea>
+                                                </div>
+                                            
+                                                <!-- Address Two -->
+                                                <div class="mb-3">
+                                                    <label for="addresstwo" class="form-label">Secondary Address</label>
+                                                    <textarea class="form-control" id="addresstwo" rows="2" placeholder="Enter secondary address">{{ contact.addresstwo }}</textarea>
+                                                </div>
+                                            
+                                                <!-- Workday and Worktime -->
+                                                <div class="mb-3">
+                                                    <label for="workday" class="form-label">Work Days</label>
+                                                    <input type="text" class="form-control" id="workday" value="{{ contact.workday }}" placeholder="e.g., Monday to Friday">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="worktime" class="form-label">Work Time</label>
+                                                    <input type="text" class="form-control" id="worktime" value="{{ contact.worktime }}" placeholder="e.g., 9 AM to 5 PM">
+                                                </div>
+                                            
+                                                <!-- Social Links -->
+                                                <div class="mb-3">
+                                                    <label for="facebook" class="form-label">Facebook</label>
+                                                    <input type="url" class="form-control" id="facebook" value="{{ contact.facebook }}" placeholder="Enter Facebook link">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="twitter" class="form-label">Twitter</label>
+                                                    <input type="url" class="form-control" id="twitter" value="{{ contact.twitter }}" placeholder="Enter Twitter link">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="whatsapp" class="form-label">WhatsApp</label>
+                                                    <input type="text" class="form-control" id="whatsapp" value="{{ contact.whatsapp }}" placeholder="Enter WhatsApp number or link">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="instagram" class="form-label">Instagram</label>
+                                                    <input type="url" class="form-control" id="instagram" value="{{ contact.instagram }}" placeholder="Enter Instagram link">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="linkedin" class="form-label">LinkedIn</label>
+                                                    <input type="url" class="form-control" id="linkedin" value="{{ contact.linkedin }}" placeholder="Enter LinkedIn link">
+                                                </div>
+                                            
+                                                <!-- Footer Text -->
+                                                <div class="mb-3">
+                                                    <label for="footertext" class="form-label">Footer Text</label>
+                                                    <textarea class="form-control" id="footertext" rows="2" placeholder="Enter footer text">{{ contact.footertext }}</textarea>
+                                                </div>
+                                            
+                                                <div class="mb-3">
+                                                    <label for="socialtext">Social Text</label>
+                                                    <textarea id="socialtext" name="socialtext" class="form-control">{{ contact.socialtext }}</textarea>
+                                                </div>
+                                            
+                                                <!-- Submit Button -->
+                                                <div class="text-end">
+                                                    <button type="submit" class="btn btn-primary" id="editContactButton">Update Contact</button>
+                                                </div>
+                                            </form>
+                                            
+                                            <!-- Response Message -->
+                                            <div id="responseMessage"></div>
+
+
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Product Add End -->
+
+                <!-- footer Start -->
+                <div class="container-fluid">
+                    <footer class="footer">
+                        <div class="row">
+                            <div class="col-md-12 footer-copyright text-center">
+                                <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <!-- footer En -->
+            </div>
+            <!-- Container-fluid End -->
+        </div>
+        <!-- Page Body End -->
+    </div>
+    <!-- page-wrapper End -->
+
+    <!-- Modal Start -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+                    <p>Are you sure you want to log out?</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="button-box">
+                        <button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn  btn--yes btn-primary">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $('#editContactForm').on('submit', function (event) {
+                event.preventDefault();
+    
+                // Disable button
+                $('#editContactButton').text('Editing...').attr('disabled', true);
+    
+                // Collect form data
+                const formData = {
+                    contactId: $('#contactId').val(),
+                    emailone: $('#emailone').val(),
+                    emailtwo: $('#emailtwo').val(),
+                    phoneone: $('#phoneone').val(),
+                    phonetwo: $('#phonetwo').val(),
+                    addressone: $('#addressone').val(),
+                    addresstwo: $('#addresstwo').val(),
+                    workday: $('#workday').val(),
+                    worktime: $('#worktime').val(),
+                    facebook: $('#facebook').val(),
+                    twitter: $('#twitter').val(),
+                    whatsapp: $('#whatsapp').val(),
+                    instagram: $('#instagram').val(),
+                    linkedin: $('#linkedin').val(),
+                    footertext: $('#footertext').val(),
+                    socialtext: $('#socialtext').val(),
+                    csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val() // CSRF token
+                };
+    
+                // Validate required fields
+                if (!formData.emailone || !formData.phoneone) {
+                    $('#responseMessage').html('<div class="alert alert-danger">Primary Email and Phone are required.</div>');
+                    $('#editContactButton').text('Update Contact').attr('disabled', false);
+                    return;
+                }
+    
+                // AJAX Request
+                $.ajax({
+                    url: "{% url 'fresh:update_ContactAddress' %}",
+                    method: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        $('#responseMessage').html('<div class="alert alert-success">' + response.message + '</div>');
+                        $('#editContactButton').text('Update Contact').attr('disabled', false);
+                        $('#editContactForm')[0].reset();
+                    },
+                    error: function (xhr) {
+                        const error = xhr.responseJSON ? xhr.responseJSON.message : 'An error occurred.';
+                        $('#responseMessage').html('<div class="alert alert-danger">' + error + '</div>');
+                        $('#editContactButton').text('Update Contact').attr('disabled', false);
+                    }
+                });
+            });
+        });
+    </script>
+    
+ 
+ 
+
+
+ 
+ 
+
+
+</body>
+
+{% endblock content %}

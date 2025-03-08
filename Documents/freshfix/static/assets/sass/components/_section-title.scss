@@ -1,0 +1,45 @@
+@use "../utilities" as *;
+
+
+/**----------------------------------------
+START: Section Title CSS
+----------------------------------------*/
+
+.tj-section {
+    &-wrapper {
+        margin-bottom: 60px;
+        @media #{$md, $sm, $xs} {
+            margin-bottom: 40px;
+        }
+    }
+    &-subtitle {
+        color: var(--tj-color-theme-primary);
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        & span {
+            &.one {
+                font-size: 16px;
+                margin-right: 5px;
+            }
+            &.two {
+                font-size: 16px;
+                margin-left: 5px;
+            }
+        }
+    }
+    &-title {
+        font-weight: 700;
+        line-height: 1.12;
+        margin-bottom: 0;
+    }
+    &-paragraph {
+        line-height: 1.62;
+    }
+    @media #{$md, $sm, $xs} {
+        &-title {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+/* !END: Section Title CSS */

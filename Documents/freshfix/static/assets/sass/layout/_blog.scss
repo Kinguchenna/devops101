@@ -1,0 +1,379 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Blog CSS
+----------------------------------------*/
+
+.tj-blog {
+    &-area {
+        padding-top: 120px;
+        padding-bottom: 90px;
+        .tj-section-wrapper {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+        }
+        @media #{$md, $sm, $xs} {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+    }
+    &-wrapper {
+        background: var(--tj-color-common-white);
+        box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.06);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 30px;
+        &:hover {
+            & .tj-blog-thumb {
+                & img {
+                    transform: scale(1.3);
+                }
+            }
+            & .tj-blog-date {
+                &::before {
+                    transform: scale(1);
+                }
+                & span {
+                    color: var(--tj-color-common-black);
+                }
+            }
+            & .tj-blog-wrapper-shape {
+                bottom: 0;
+            }
+        }
+        &-shape {
+            position: absolute;
+            bottom: -135px;
+            left: -1px;
+            z-index: -1;
+            transition: .6s;
+            & img {
+                width: 100%;
+            }
+        }
+    }
+    &-thumb {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        & img {
+            transition: 0.5s ease-in-out;
+        }
+    }
+    &-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        margin-bottom: 18px;
+        & span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-medium);
+            font-size: 14px;
+            border-right: 1px solid #D8DDE1;
+            padding-right: 20px;
+            margin-right: 20px;
+            &:last-child {
+                border-right: none;
+                padding-right: 0px;
+                margin-right: 0px;
+            }
+            & i {
+                color: var(--tj-color-theme-primary);
+                margin-right: 10px;
+                display: inline-flex;
+                line-height: 1;
+            }
+            a {
+                padding-left: 4px;
+                &:hover {
+                    color: var(--tj-color-theme-primary);
+                }
+            }
+        }
+    }
+    &-content {
+        padding: 30px 30px 30px 35px;
+        @media #{$xl, $md, $sm} {
+            padding: 30px 20px 30px;
+        }
+        @media #{$xs} {
+            padding: 30px 0px;
+        }
+    }
+    &-title {
+        line-height: 1.42;
+        margin-bottom: 14px;
+        &:hover {
+            color: var(--tj-color-theme-primary);
+        }
+    }
+    &-paragraph {
+        @media #{$xl} {
+            font-size: 14px;
+        }
+    }
+    &-date {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        border-radius: 0px 40px 40px 40px;
+        width: 70px;
+        height: 70px;
+        background: var(--tj-color-theme-primary);
+        line-height: 1.1;
+        transition: .6s;
+        z-index: 1;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: scale(0);
+            background: var(--tj-color-theme-secondary);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: 0.6s;
+            border-radius: 0px 40px 40px 40px;
+            transform-origin: left top;
+        }
+        & span {
+            text-align: center;
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-sbold);
+            font-size: 30px;
+            color: var(--tj-color-common-white);
+            margin-bottom: 0;
+            display: block;
+            transform: translateY(10px);
+            transition: .6s;
+            &.two {
+                font-size: 14px;
+            }
+
+        }
+    }
+
+    // Home 2 Scss
+
+    &-2 {
+        &-area {
+            padding: 120px 0 90px;
+            padding-top: 120px;
+            padding-bottom: 90px;
+            @media #{$md, $sm, $xs} {
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+        }
+        &-section-wrapper {
+            & .tj-section-wrapper {
+                margin-bottom: 50px;
+            }
+        }
+        &-wrapper {
+            padding: 25px 30px;
+            border: 1px solid var(--tj-color-border-2);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            @media #{$md} {
+                padding: 25px 21px;
+            }
+            &::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-top: 1px solid var(--tj-color-theme-primary);
+                border-left: 1px solid var(--tj-color-theme-primary);
+                transition: 0.6s ease-in-out;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 10px;
+                z-index: -1;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-bottom: 1px solid var(--tj-color-theme-primary);
+                border-right: 1px solid var(--tj-color-theme-primary);
+                transition: 0.6s ease-in-out;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 10px;
+                z-index: -1;
+            }
+            &:hover {
+                &::before {
+                    width: 100%;
+                    height: 100%;
+                    visibility: visible;
+                    opacity: 1;
+                }
+                &::after {
+                    width: 100%;
+                    height: 100%;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            &.event {
+                & .tj-blog-2-thumb img {
+                    border-radius:200px 200px 0 0;
+                }
+            }
+        }
+        &-thumb {
+            & img {
+                width: 100%;
+                border-radius: 0 0 200px 200px;
+                transition: 0.6s ease-in-out;
+            }
+        }
+        &-content {
+            padding: 24px 0 0;
+        }
+    }
+
+
+    // Home 3 Scss
+
+    &-3 {
+        &-area {
+            padding-top: 120px;
+            padding-bottom: 90px;
+            .tj-section-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            @media #{$md} {
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+            @media #{$sm, $xs} {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+        &-wrapper {
+            background: var(--tj-color-common-white);
+            box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.06);
+            padding: 28px 42px 24px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            @media #{$xl} {
+                padding: 28px 22px 24px;
+            }
+            @media #{$md} {
+                padding: 28px 20px 24px;
+            }
+            @media #{$xs} {
+                padding: 28px 20px 24px;
+            }
+            &:hover {
+                & .tj-blog-3-thumb {
+                    & img {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+        &-content {
+            padding: 0;
+        }
+        &-title {
+            margin-bottom: 26px;
+        }
+        &-thumb {
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            & img {
+                border-radius: 10px;
+                transition: 0.5s ease-in-out;
+                @media #{$sm,$xs} {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        &-center {
+            &-wrapper {
+                &:hover {
+                  & .tj-blog-3-center-button {
+                    top: 50%;
+                    visibility: visible;
+                    opacity: 1;
+                  }
+                  & .tj-blog-3-center-thumb {
+                    & img {
+                        transform: scale(1.2);
+                      }
+                  }  
+                }
+            }
+            &-thumb {
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+                border-radius: 10px;
+                & img {
+                    transition: 0.5s ease-in-out;
+                    border-radius: 10px;
+                    @media #{$xl} {
+                        height: 480px;
+                        object-fit: cover;
+                    }
+                    @media #{$md} {
+                        width: 100%;
+                        margin-bottom: 30px;
+                        height: 476px;
+                        object-fit: cover;
+                    }
+                    @media #{$sm,$xs} {
+                        width: 100%;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+            &-button {
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: 0.5s ease-in-out;
+                opacity: 0;
+                visibility: hidden;
+                & .tj-blog-btn {
+                    background: var(--tj-color-common-white);
+                    padding: 12px 25px;
+                    display: inline-block;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+
+}
+
+
+/* !END: Blog CSS */

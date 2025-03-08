@@ -1,0 +1,61 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Call-To-Action CSS
+----------------------------------------*/
+
+.tj-cta {
+     &-3 {
+          &-area {
+               background: rgba(7, 124, 234, .09);
+               padding: 70px 0 80px;
+               position: relative;
+               z-index: 1;
+          }
+          &-bg-shape {
+               &-1  {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+               }
+               &-2 {
+                    position: absolute;
+                    bottom: 0;
+                    left: 140px;
+                    z-index: -1;
+                    @media #{$xl} {
+                         left: 0;
+                    }
+                    @media #{$lg} {
+                         left: 0;
+                         width: 30%;
+                    }
+                    @media #{$md,$sm,$xs} {
+                         display: none;
+                    }
+               }
+               &-3 {
+                    position: absolute;
+                    right: 100px;
+                    bottom: 0;
+                    z-index: -1;
+                    @media #{$xl} {
+                         right: 0;
+                    }
+                    @media #{$lg} {
+                         right: 0;
+                         width: 30%;
+                    }
+                    @media #{$md,$sm,$xs} {
+                         display: none;
+                    }
+               }
+          }
+          &-button {
+               margin-top: -10px;
+          }
+     }
+}
+
+/* !END: Call-To-Action CSS */

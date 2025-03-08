@@ -1,0 +1,29 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Map CSS
+----------------------------------------*/
+
+.tj-map {
+     &-area {
+         overflow: hidden;
+     }
+     &-wrapper {
+         position: relative;
+         top: 10px;
+         iframe {
+            width: 100%;
+            min-height: 715px;
+         }
+         @media #{$md, $sm, $xs} {
+            iframe {
+               width: 100%;
+               min-height: 450px;
+            }
+         }
+     }
+ }
+
+/* !END: Map CSS */
+
+ 

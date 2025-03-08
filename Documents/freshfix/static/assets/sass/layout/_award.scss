@@ -1,0 +1,200 @@
+@use "../utilities" as *;
+
+
+/**----------------------------------------
+START: Award CSS
+----------------------------------------*/
+
+.tj-award {
+
+     // Home 3 Scss
+     
+     &-3 {
+          &-area {
+               padding-top: 120px;
+               padding-bottom: 120px;
+               @media #{$md} {
+                    padding-top: 80px;
+                    padding-bottom: 80px;
+               }
+               @media #{$sm, $xs} {
+                    padding-top: 80px;
+                    padding-bottom: 50px;
+               }
+          }
+          &-section-wrapper {
+               & .tj-section-wrapper {
+                    margin-bottom: 50px;
+               }
+          }
+          &-crest {
+               &-wrapper {
+                    display: flex;
+                    align-items: center;
+                    @media #{$lg, $md, $sm} {
+                         margin-bottom: 40px;
+                         justify-content: center;
+                    }
+                    @media #{$xs} {
+                         margin-bottom: 40px;
+                         flex-wrap: wrap;
+                         row-gap: 30px;
+                         justify-content: center;
+                    }
+               }
+               &-thumb {
+                    margin-right: 53px;
+                    animation: bounce-thum-1 2s forwards infinite alternate;
+                    @media #{$xs} {
+                         margin-right: 0;
+                    }
+               }
+               &-title {
+                    font-size: 36px;
+                    color: var(--tj-color-theme-primary);
+                    margin-bottom: 24px;
+               }
+               &-paragraph {
+                    font-size: 18px;
+                    color: var(--tj-color-heading-primary);
+               }
+               &-rating {
+                    margin-bottom: 22px;
+               }
+          }
+          &-wrap { 
+               display: flex;
+               justify-content: end;
+               @media #{$lg, $md} {
+                    justify-content: center;
+               }
+               @media #{$xs} {
+                    flex-wrap: wrap;
+                    justify-content: left;
+               }
+          }
+          &-item {
+               text-align: center;
+               padding: 0 30px 40px;
+               margin-right: 50px;
+               position: relative;
+               z-index: 1;
+               @media #{$xl} {
+                    padding: 0 20px 40px;
+               }
+               @media #{$sm} {
+                    padding: 0 13px 40px;
+               }
+               @media #{$xs} {
+                    margin-right: 0;
+                    margin-bottom: 30px;
+                    width: 100%;
+               }
+               &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    clip-path: polygon(0 0, 100% 0, 100% 91%, 50% 100%, 0 91%);
+                    background: rgba(7, 124, 234, 0.10);
+                    z-index: -1;
+               }
+               &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    background: rgba(7, 124, 234, 0.10);
+                    clip-path: polygon(47% 0, 100% 0, 100% 91%, 48% 100%, 0 100%, 50% 100%, 50% 0);
+               }
+               &:last-child {
+                    margin-right: 0;
+                    &::before {
+                         background: rgba(254, 219, 92, 0.08);
+                         clip-path: polygon(0 0, 100% 0, 100% 91%, 50% 100%, 0 91%);
+                    }
+                    &::after {
+                         background: rgba(254, 219, 92, 0.12);
+                         clip-path: polygon(47% 0, 100% 0, 100% 91%, 48% 100%, 0 100%, 50% 100%, 50% 0);
+                    }
+                    & .tj-award-3 {
+                         &-number {
+                              & span {
+                                   background: var(--tj-color-theme-secondary);
+                                   color: var(--tj-color-heading-primary);
+                              }
+                         }
+                         &-title-award {
+                              color: var(--tj-color-heading-primary);
+                              &::before {
+                                   background: var(--tj-color-theme-secondary);
+                              }
+                         }
+                    }
+               }
+          }
+          &-number {
+               margin-bottom: 24px;
+               & span {
+                    width: 60px;
+                    height: 60px;
+                    line-height: 1;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: var(--tj-color-theme-primary);
+                    color: var(--tj-color-common-white);
+                    font-family: var(--tj-ff-heading);
+                    font-weight: 600;
+                    font-size: 36px;
+                    clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%);
+               }
+          }
+          &-title {
+               font-weight: 600;
+               font-size: 22px;
+               line-height: 1.55;
+               margin-bottom: 20px;
+               &-award {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 156%;
+                    text-transform: uppercase;
+                    color: var(--tj-color-common-white);
+                    margin-bottom: 20px;
+                    position: relative;
+                    z-index: 1;
+                    &::before {
+                         position: absolute;
+                         content: "";
+                         width: 282px;
+                         height: 40px;
+                         top: 50%;
+                         left: 50%;
+                         background: var(--tj-color-theme-primary);
+                         z-index: -1;
+                         transform: translate(-50%, -50%);
+                         @media #{$sm} {
+                              width: 255px;
+                         }
+                    }
+
+               }
+          }
+          &-years {
+               & span {
+                    font-weight: 700;
+                    text-align: center;
+                    color: var(--tj-color-heading-primary);
+                    font-size: 48px;
+               }
+          }
+
+     }
+}
+
+/* !END: Award CSS */

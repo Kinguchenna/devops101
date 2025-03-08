@@ -1,0 +1,303 @@
+@use "../utilities"as *;
+
+
+/**----------------------------------------
+START: Button CSS
+----------------------------------------*/
+
+.tj-header-btn {
+    background: var(--tj-color-theme-secondary);
+    color: var(--tj-color-grey-1);
+    padding: 24px 67px;
+    display: inline-block;
+    margin-left: 100px;
+    border-radius: 0 0 30px 0;
+    font-weight: var(--tj-fw-bold);
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: .4s;
+    @media #{$xl} {
+        margin-left: 40px;
+    }
+    @media #{$lg} {
+        margin-left: 70px;
+    }
+    @media #{$md} {
+        margin-left: 30px;
+    }
+    & i {
+        margin-left: 3px;
+    }
+    &:hover {
+        color: var(--tj-color-heading-primary);
+    }
+}
+
+
+.tj-primary-btn {
+    background: var(--tj-color-theme-primary);
+    color: var(--tj-color-common-white);
+    font-weight: var(--tj-fw-sbold);
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 20px 30px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    transition: background 0.7s ease-in;
+    & span {
+        gap: 10px;
+        display: inline-flex;
+        transition: 0.3s;
+        color: var(--tj-color-common-white);
+        align-items: center;
+    }
+    &:hover {
+        & span {
+            color: var(--tj-color-heading-primary);
+        }
+    }
+}
+
+
+.tj-secondary-btn {
+    background: var(--tj-color-theme-secondary);
+    color: var(--tj-color-heading-primary);
+    font-weight: var(--tj-fw-bold);
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 20px 30px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    transition: background 0.7s ease-in;
+    & span {
+        gap: 10px;
+        display: inline-flex;
+        transition: 0.3s;
+        color: var(--tj-color-heading-primary);
+        align-items: center;
+    }
+    &:hover {
+        & span {
+            color: var(--tj-color-theme-primary);
+        }
+    }
+}
+
+
+.tj-white-btn {
+    background: var(--tj-color-common-white);
+    color: var(--tj-color-theme-primary);
+    font-weight: var(--tj-fw-bold);
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 20px 30px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    transition: background 0.7s ease-in;
+    & span {
+        gap: 10px;
+        display: inline-flex;
+        transition: 0.3s;
+        color: var(--tj-color-theme-primary);
+        align-items: center;
+    }
+}
+
+
+.tj-square {
+    &-btn {
+        background: transparent;
+        color: var(--tj-color-theme-primary);
+        display: block;
+        text-align: center;
+        padding: 18px;
+        font-weight: var(--tj-fw-bold);
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        border: 1px solid #D8DDE1;
+        border-radius: 8px;
+        transition: background 0.7s ease-in;
+        line-height: 1;
+        &.active {
+            background: var(--tj-color-theme-primary);
+            color: var(--tj-color-common-white);
+            border: none;
+            padding: 19px 18px;
+        }
+        &.tj-hover-btn:hover .tj-hover-btn-circle-dot {
+            width: 720px;
+            height: 720px;
+        }
+    }
+}
+
+
+.tj-round {
+    &-btn {
+        background: transparent;
+        color: var(--tj-color-theme-primary);
+        font-weight: var(--tj-fw-bold);
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        padding: 17px 23px;
+        line-height: 1;
+        display: inline-block;
+        border-radius: 50px;
+        position: relative;
+        z-index: 1;
+        transition: .4s;
+        & i {
+            margin-left: 4px;
+            transition: .4s;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgb(7, 124, 234, .16);
+            border-radius: 50px;
+            transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        &:hover {
+            color: var(--tj-color-theme-primary);
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.tj-contact {
+    &-btn {
+        background: var(--tj-color-theme-primary);
+        color: var(--tj-color-common-white);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        border-radius: 5px;
+        padding: 21px 62px;
+        line-height: 1;
+        display: inline-block;
+        transition: .4s;
+    }
+}
+
+.tj-blog {
+    &-btn {
+        font-weight: var(--tj-fw-bold);
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--tj-color-theme-primary);
+        transition: .4s;
+        & i {
+            display: inline-flex;
+            line-height: 1;
+            transition: .4s;
+        }
+        &:hover {
+            color: var(--tj-color-theme-primary);
+        }
+    }
+}
+
+
+.tj-hover-btn {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &-circle-dot {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(0, -50%);
+        width: 0;
+        height: 0;
+        transition: all 0.6s ease-out;
+        line-height: 20px;
+        border-radius: 50%;
+        background-color: var(--tj-color-theme-secondary);
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    &:hover {
+      background: var(--tj-color-theme-secondary);
+      color: var(--tj-color-heading-primary);
+      & .tj-hover-btn-circle-dot {
+          width: 520px;
+          height: 520px;
+      }
+    }
+}
+
+.icon_box {
+	position: relative;
+	display: inline-flex;
+	overflow: hidden;
+	padding: 0 4px;
+	transform: rotate(-45deg);
+    transition: all 0.3s ease-in-out 0s;
+    & i {
+        display: inline-flex;
+        line-height: 1;
+    }
+}
+.icon_box .icon_first {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	line-height: 1;
+	transition: all 0.3s ease-in-out 0s;
+}
+.icon_box .icon_second {
+	position: absolute;
+	transform: translateX(-150%);
+    transition: all 0.3s ease-in-out 0s;
+}
+.tj-arrow-btn:hover .icon_box .icon_first {
+	transform: translateX(150%);
+}
+.tj-arrow-btn:hover .icon_box .icon_second {
+	transform: translateX(0%);
+}
+
+/* !END: Button CSS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

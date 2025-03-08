@@ -1,0 +1,55 @@
+@use "../utilities" as *;
+
+
+/**----------------------------------------
+START: back to top CSS
+----------------------------------------*/
+
+.back-to-top-wrapper {
+	position: fixed;
+    right: 50px;
+    bottom: 0;
+    height: 44px;
+    width: 44px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50%;
+    z-index: 99;
+	opacity: 0;
+	visibility: hidden;
+    transition: .6s;
+	@media #{$sm, $xs}{
+		right: 25px;
+		bottom: 25px;
+	}
+	&.back-to-top-btn-show {
+		visibility: visible;
+		opacity: 1;
+		bottom: 50px;
+		@media #{$sm, $xs}{
+			bottom: 25px;
+		}
+	}
+}
+
+.back-to-top-btn{
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	background: var(--tj-color-theme-primary);
+	box-shadow: 0px 8px 16px rgba(3, 4, 28, 0.3);
+	color: var(--tj-color-common-white);
+	border-radius: 50%;
+	@include transition(all, .3s);
+	& svg{
+		@include transform(translateY(-2px));
+	}
+
+	&:hover{
+		@include transform(translateY(-4px));
+	}
+
+}
+/* !END: back to top CSS */

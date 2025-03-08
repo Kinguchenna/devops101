@@ -1,0 +1,353 @@
+
+{% extends 'partials/base.html' %}
+{% load static %}
+
+    <!--End header-->
+    
+    {% block meta_tags %}
+        <meta name="description" content="International School & Job Portal - Admissions and Career Opportunities for Global Students and Professionals">
+        <meta name="keywords" content="International School, Admissions, Job Portal, Career Opportunities, Global Students, Global Jobs, Education, Apply Now, Employment, University, Scholarships">
+        <title>International School & Job Portal - Admissions & Career Opportunities</title>
+    {% endblock meta_tags %}
+
+    
+
+
+{%  block content %}
+
+<body>
+    <div class="body-overlay"></div>
+
+     <!-- Loader Start -->
+ 
+    <!-- Loader End -->
+
+    <!-- back to top start -->
+    {% include 'partials/backtotop.html' %}
+    <!-- back to top end -->
+
+    <!-- Search Popup Start -->
+    {% include 'partials/searchpopup.html' %}
+    <!-- Search Popup End-->
+
+    <!-- cart mini area start -->
+    {% include 'partials/cartmini.html' %}
+    <!-- cart mini area end -->
+
+    <!-- Hamburger start -->
+    {% include 'partials/harmburger.html' %}
+    <!-- Hamburger end -->
+
+    <!-- Header Area Start -->
+    {% include 'partials/header.html' %}
+    <!-- Header Area End-->
+
+    <!-- Sticky Header Area Start -->
+      {% include 'partials/fixedheadertop.html' %}
+    <!-- Sticky Header Area End -->
+
+    <main id="primary" class="site-main">
+
+        <!-- Breadcrumb Area Start-->
+        <section class="tj-breadcrumb-area" data-background="{% static 'assets/images/breadcrumb/breadcrumb-bg1.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="tj-breadcrumb-content text-center">
+                        <h2 class="tj-breadcrumb-title tj-char-animation">Blog Details</h2>
+                        <p class="tj-breadcrumb-body"><span><a href="/">Home</a></span> <span class="spacing"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1639 8.42265C16.4818 8.74057 16.4818 9.25948 16.1639 9.57739L9.93661 15.8045C9.6182 16.1229 9.10024 16.1229 8.78187 15.8045L8.43354 15.4562C8.11485 15.1375 8.11478 14.6198 8.4335 14.301L13.1574 9.57753C13.4762 9.25884 13.4762 8.74106 13.1574 8.42237L8.43354 3.69885C8.11478 3.38012 8.11481 2.86248 8.43357 2.54375L8.7819 2.19542C9.09982 1.87751 9.61872 1.87751 9.93664 2.19542L16.1639 8.42265ZM3.34094 2.19535C3.02271 1.87708 2.50426 1.87712 2.18602 2.19535L1.8377 2.54368C1.5196 2.86178 1.51957 3.38068 1.8377 3.69881L6.5614 8.42237C6.88012 8.7411 6.88012 9.25881 6.5614 9.57753L1.83766 14.3011C1.51943 14.6193 1.51946 15.138 1.83766 15.4562L2.18599 15.8045C2.50436 16.1229 3.02253 16.1229 3.34091 15.8045L9.01506 10.1302C10.6067 11.7203 10.2041 11.317 9.01622 10.129L9.56782 9.57739C9.88595 9.25926 9.88591 8.74074 9.56782 8.42262L3.34094 2.19535Z" fill="white" />
+                          </svg></span>  {{blog.category.name}}  </p>
+                    </div>
+                </div>
+            </div>
+            <div class="tj-breadcrumb-bg-shape">
+                <img src="assets/images/breadcrumb/breadcrumb-bg-shape.png" alt="">
+            </div>
+        </section>
+        <!-- Breadcrumb Area End-->
+
+        <!-- Blog-Page Area Start-->
+        <section class="full-width tj-posts__area tj-blog-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="tj-post__container tj-post-wrapper">
+                            <article class="tj__post tj-post-item details wow fadeInUp" data-wow-delay=".2s">
+                                <div class="blog-thumb-image">
+                                    <a href="#">
+                                        {% if blog.image %}
+                                        <img src="{{ blog.image.url }}" class="img-fluid" alt="Blog Image">
+                                        {% else %}
+                                            <p>No image available</p>
+                                        {% endif %}
+                                    </a>
+                                </div>
+                                <div class="tj-post__content">
+                                    <div class="tj-post__meta entry-meta blog-meta">
+                                        <span><i class="flaticon-calendar"></i>{{blog.created_at}}</span>
+                                        <span><i class="flaticon-user"></i><span><a href="#">By Admin</a></span></span>
+                                        <span><i class="flaticon-comment"></i><a href="#">Comments ({{comments_count}})</a></span>
+                                    </div>
+                                    <div class="details-title">
+                                        <h3 class="tj-post__title entry-title title tj-char-animation"> {{blog.name}} </h3>
+                                    </div>
+                                    <div class="post_excerpt mb-3">
+                                        {{blog.description|safe}}
+                                    </div> 
+                                </div>
+                                <div class="tj-clearfix"></div>
+                            </article>
+                            <!-- <blockquote class="wow fadeInUp" data-wow-delay=".3s">
+                                <p>“Our professional maids are trustworthy and can clean while you’re away. Just provide us with access instructions.”</p>
+                            </blockquote> --> 
+
+                            <div class="tj-service-details-center-image details wow fadeInUp" data-wow-delay=".5s">
+                                {% if blog.images.all %}
+                                {% for image in blog.images.all|slice:":2" %}
+                                    <img src="{{ image.file.url }}" class="img-fluid" alt="Blog Image">
+                                {% endfor %}
+                            {% else %}
+                                <p>No image available</p>
+                            {% endif %}
+                            
+                            </div> 
+
+
+                            <div class="single-blog-tag-share tj-tags-post wow fadeInUp" data-wow-delay=".7s">
+                                <div class="tj-tag tagcloud details">
+                                    <span class="tag__title">Tags : </span>
+                                    {% include 'partials/populartags.html' %}
+                                </div>
+                                <div class="shear-link post-share">
+                                    <span class="tag__title">Share: </span>
+                                    <ul class="dot-style">
+                                        <li><a href="#" class="facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#" class="twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                        <li><a href="#" class="linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="#" class="pinteres"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tj-comments-wrap wow fadeInUp" data-wow-delay=".8s">
+                                <div class="comments-title">
+                                   <h3 class="title"> {{comments_count}} Comments</h3>
+                                </div>
+                                <div class="tj-latest-comments">
+                                   <ul>
+                                      {% if comments %}
+                                      {% for comment in comments %}
+                                      <li class="tj-comment">
+                                         <div class="comment-content">
+                                            <div class="comments-header">
+                                               <!-- <div class="comment-avatar">
+                                        
+                                                  <img src="{% static 'assets/images/blog/blog-comment-11.jpg' %}" alt="Image">
+
+
+                                               </div> -->
+                                               <div class="avatar-name">
+
+                                                    <div class="avatar-name-content-top">
+                                                        <div class="avatar-name-content">
+                                                            <h6 class="title">
+                                                            <a href="blog-details.html"> {{comment.fname}}  {{comment.lname}} </a>
+                                                            </h6>
+                                                            <span class="date"> <i class="fa-light fa-calendar-lines-pen"></i> {{comment.created_at}} </span>
+                                                        </div>
+                                                        <!-- <div class="comment-reply">
+                                                            <a class="reply" href="blog-details.html"> Reply</a>
+                                                        </div> -->
+                                                    </div>
+
+                                                    <div class="avatar-name-content-bottom">
+                                                        <div class="desc">
+                                                            <p>
+                                                                {{comment.comment}}
+                                                            </p>
+                                                         </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                         </div>
+                                      </li> 
+                                      {% endfor %}
+                                      {% endif %}
+                             
+                                   </ul>
+                                </div>
+                            </div>
+                            <div class="tj-comment-respond wow fadeInUp" data-wow-delay=".9s">
+                                <div class="comment-header">
+                                    <h3 class="title tj-char-animation">Leave a Reply</h3>
+                                    <div class="desc">
+                                        <p>Your email Address Not Be Published. Requied Fields are Marked</p>
+                                    </div>
+                                </div>
+                                <form accept="{% url 'fresh:sendComment' %}" method="POST" id="addServiceForm">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <!-- Hidden Post ID -->
+                                        <input type="hidden" name="post_id" id="post_id" value="{{ blog.id }}">
+                                
+                                        <!-- First Name -->
+                                        <div class="col-lg-6">
+                                            <div class="form-input">
+                                                <input type="text" id="fname" name="fname" placeholder="First Name" required>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- Last Name -->
+                                        <div class="col-lg-6">
+                                            <div class="form-input">
+                                                <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- Email -->
+                                        <div class="col-lg-12">
+                                            <div class="form-input">
+                                                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- Website -->
+                                        <div class="col-lg-12">
+                                            <div class="form-input">
+                                                <input type="text" id="website" name="website" placeholder="Enter your website" required>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- Comment -->
+                                        <div class="col-lg-12">
+                                            <div class="form-input">
+                                                <textarea id="comment" name="comment" placeholder="Enter your comment" required></textarea>
+                                            </div>
+                                        </div>
+                                
+                                        <!-- Submit Button -->
+                                        <div class="blog-details-button">
+                                            <button class="tj-primary-btn tj-hover-btn" type="submit" id="addServiceButton">Submit Now</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                                <!-- Response Message (success or error) -->
+                                <div id="responseMessage"></div>
+                                
+                            </div>
+                            <div id="responseMessage" class="mt-3"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside class="tj-main__sidebar tj-main-sidebar">
+                            <div class="tj-sidebar__widget tj-blog-widget widget_search wow fadeInUp" data-wow-delay=".3s">
+                                <div class="tj-widget__search sidebar-search">
+                                    <form action="#">
+                                        <input type="text" value="" required="" name="s" placeholder="Search...">
+                                        <button type="submit"> <i class="fa-regular fa-magnifying-glass"></i> </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tj-sidebar__widget widget_categories stander wow fadeInUp" data-wow-delay=".4s">
+                                <h3 class="widget_categories-title">Categories</h3>
+                                <nav>
+                                    {% include 'partials/categories.html' %}
+                                </nav>
+                            </div>
+                            <div id="tj-recent-posts-2" class="tj-sidebar__widget tj-blog-widget tj_recent_posts wow fadeInUp" data-wow-delay=".5s">
+                                <h3 class="tj-sidebar-widget__title side-title"> Recent Posts </h3>
+                                <div class="sidebar-recent-post">
+                                    {% include 'partials/recentpost.html' %}
+
+                                </div>
+                            </div>
+                            <div id="tag_cloud-2" class="tj-sidebar__widget tj-blog-widget widget_tag_cloud wow fadeInUp" data-wow-delay=".6s">
+                                <h3 class="tj-sidebar-widget__title side-title">Popular Tages</h3>
+                                <nav aria-label="Popular Tages">
+                                    <div class="tagcloud">
+                                        {% include 'partials/populartags.html' %}
+                                    </div>
+                                </nav>
+                            </div>
+                        </aside>
+                    </div>
+                    <!--!sidebar -->
+                </div>
+            </div>
+        </section>
+        <!-- Blog-Page Area End-->
+
+    </main>
+
+    <!-- Footer Area Start-->
+    {% include 'partials/footer.html' %}
+    <!-- Footer Area End-->
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#addServiceForm').on('submit', function (event) {
+                event.preventDefault();
+
+                // Disable button to prevent multiple submissions
+                $('#addServiceButton').text('Submitting...').attr('disabled', true);
+
+                // Collect data from form fields
+                const fname = $('#fname').val();
+                const lname = $('#lname').val();
+                const email = $('#email').val();
+                const website = $('#website').val();
+                const comment = $('#comment').val();
+                const post_id = $('#post_id').val();
+                
+                // Fetch CSRF token
+                const csrfToken = $('meta[name="csrf-token"]').attr('content');
+                
+                // Validate required fields
+                if (!fname || !lname || !email || !website || !comment) {
+                    $('#responseMessage').html('<div class="alert alert-danger">Please fill all required fields.</div>');
+                    $('#addServiceButton').text('Submit Now').attr('disabled', false);
+                    return;
+                }
+
+                // Create FormData object to send via AJAX
+                const formData = new FormData();
+                formData.append('fname', fname);
+                formData.append('lname', lname);
+                formData.append('email', email);
+                formData.append('website', website);
+                formData.append('comment', comment);
+                formData.append('post_id', post_id); // Ensure this matches your form field
+                formData.append('csrfmiddlewaretoken', csrfToken);
+
+                // AJAX request to send form data to server
+                $.ajax({
+                    url: "{% url 'fresh:sendComment' %}", // Replace with your actual URL
+                    method: 'POST',
+                    data: formData,
+                    processData: false, // Don't process the data (for FormData)
+                    contentType: false, // Don't set content type (for FormData)
+                    success: function (response) {
+                        // Display success message and reset form
+                        $('#responseMessage').html('<div class="alert alert-success">' + response.message + '</div>');
+                        $('#addServiceButton').text('Submit Now').attr('disabled', false);
+                        $('#addServiceForm')[0].reset();
+                    },
+                    error: function (xhr) {
+                        // Display error message
+                        const error = xhr.responseJSON ? xhr.responseJSON.message : 'An error occurred.';
+                        $('#responseMessage').html('<div class="alert alert-danger">' + error + '</div>');
+                        $('#addServiceButton').text('Submit Now').attr('disabled', false);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+ 
+</body>
+
+{% endblock content %}

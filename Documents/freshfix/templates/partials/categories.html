@@ -1,0 +1,14 @@
+<ul>
+    {% if categories %}
+    {% for category in categories %}
+        <li class="cat-item">
+            <a href="{% url 'fresh:blogByCategory' category.slug %}">
+                {{ category.name }}
+                <!-- Correctly showing the count of blogs related to this category -->
+                <span>({{ category.blog_set.count }})</span>  <!-- Assuming Blog has a ForeignKey to Category -->
+            </a>
+        </li> 
+    {% endfor %}
+{% endif %}
+
+</ul>

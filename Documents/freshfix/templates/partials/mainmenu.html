@@ -1,0 +1,22 @@
+{% load static %}
+
+
+<div class="mainmenu main-mobile-menu d-none d-lg-inline-block">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{% url 'fresh:about' %}">About</a></li>
+        <!-- <li class="has-dropdown">
+            <a href="{% url 'fresh:about' %}">About</a>
+            <ul class="sub-menu">
+                <li><a href="team.html">Team</a></li>
+                <li><a href="team-details.html">Team Details</a></li>
+            </ul>
+        </li> -->
+        <li><a href="{% url 'fresh:service' %}">Services</a></li>
+    
+        </li>
+        <li> <a href="{% url 'fresh:blog' %}">News</a></li>
+        <li><a href="{% url 'fresh:privacy' %}">Privacy</a></li>
+        <li><a href="{% url 'fresh:contact' %}">Contact</a></li>
+    </ul>
+</div>

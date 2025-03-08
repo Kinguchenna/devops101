@@ -1,0 +1,333 @@
+{% load static %}
+
+
+<div class="sidebar-wrapper">
+    <div id="sidebarEffect"></div>
+    <div>
+        <div class="logo-wrapper logo-wrapper-center">
+            {% if logo %}
+                        
+            <a href="/" ><img class="img-fluid for-white"  src="{{ logo.logo.url }}" alt="FreshFix" ></a>
+                            
+            {% else %}
+                
+            {% endif %}
+            <div class="back-btn">
+                <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="toggle-sidebar">
+                <i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
+            </div>
+        </div>
+        <div class="logo-icon-wrapper">
+            {% if logo %}
+                        
+            <a href="/" ><img class="img-fluid main-logo main-white"  src="{{ logo.logo.url }}" alt="FreshFix" ></a>
+                            
+            {% else %}
+                
+            {% endif %}
+ 
+                <!-- <img class="img-fluid main-logo main-white" src="assets/images/logo/logo.png" alt="logo">
+                <img class="img-fluid main-logo main-dark" src="assets/images/logo/logo-white.png"
+                    alt="logo"> -->
+           
+        </div>
+        <nav class="sidebar-main">
+            <div class="left-arrow" id="left-arrow">
+                <i data-feather="arrow-left"></i>
+            </div>
+
+            <div id="sidebar-menu">
+                <ul class="sidebar-links" id="simple-bar">
+                    <li class="back-btn"></li>
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title link-nav" href="index.html">
+                            <i class="ri-home-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Logo</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listLogos' %}">Logo</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:getLogo' %}">Add New Logo</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Slider</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listSlider' %}">Slider</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addSlider' %}">Add New Slider</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Services</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listServices' %}">Service</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addServices' %}">Add New Service</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>About</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listAbout' %}">About</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:add_about' %}">Add  About</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Team</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listTeam' %}">Team</a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addTeam' %}">Add  Team</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Why Choose Us</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listUs' %}"> List </a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addUs' %}"> Add  </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Testimonial</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listTestimonials' %}"> List </a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addtestimonials' %}"> Add  </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Category</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listCategory' %}"> List </a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addCategory' %}"> Add  </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Blog</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listBlog' %}"> List </a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addBlog' %}"> Add  </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Address & Contact</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listContactAddress' %}"> List </a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addContactAddress' %}"> Add  </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Contact Image</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listContactImage' %}"> List </a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:getContactImage' %}"> Add  </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Comments</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listComments' %}"> List </a>
+                            </li> 
+                        </ul>
+                    </li>
+                     
+
+                    <li class="sidebar-list">
+                        <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-store-3-line"></i>
+                            <span>Privacy & Policy</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listPrivacyPolicy' %}"> List </a>
+                            </li>
+
+                            <li>
+                                <a href="{% url 'fresh:addPrivacy' %}"> Add  </a>
+                            </li>
+                        </ul>
+                    </li>
+ 
+
+                   
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-user-3-line"></i>
+                            <span>Users</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listUser' %}"> All users </a> 
+                            </li>
+                         
+                        </ul>
+                    </li>
+
+
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-user-3-line"></i>
+                            <span>Codes</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="{% url 'fresh:listCode' %}"> All Codes </a> 
+                            </li>
+                         
+                        </ul>
+                    </li>
+
+         
+
+          
+                    <!-- <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                            <i class="ri-archive-line"></i>
+                            <span>Orders</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="order-list.html">Order List</a>
+                            </li>
+                            <li>
+                                <a href="order-detail.html">Order Detail</a>
+                            </li>
+                            <li>
+                                <a href="order-tracking.html">Order Tracking</a>
+                            </li>
+                        </ul>
+                    </li> -->
+
+                   
+
+                    
+                </ul>
+            </div>
+
+            <div class="right-arrow" id="right-arrow">
+                <i data-feather="arrow-right"></i>
+            </div>
+        </nav>
+    </div>
+</div>

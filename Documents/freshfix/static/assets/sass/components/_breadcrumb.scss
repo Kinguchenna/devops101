@@ -1,0 +1,70 @@
+@use "../utilities" as *;
+
+
+/**----------------------------------------
+START: Breadcrumb CSS
+----------------------------------------*/
+
+.tj-breadcrumb {
+     &-area {
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          padding: 280px 0 120px;
+          overflow: hidden;
+          position: relative;
+          z-index: 1;
+          &::before {
+               content: "";
+               position: absolute;
+               width: 100%;
+               height: 100%;
+               top: 0;
+               left: 0;
+               background: rgba(7, 124, 234, .50);
+               z-index: -2;
+          }
+          &::after {
+               content: "";
+               position: absolute;
+               width: 100%;
+               height: 100%;
+               top: 0;
+               left: 0;
+               background: rgba(1, 15, 52, .3);
+               z-index: -1;   
+          }
+          @media #{$md} {
+               padding: 200px 0 100px;
+          }
+          @media #{$sm} {
+               padding: 180px 0 80px;
+          }
+          @media #{$xs} {
+               padding: 180px 0 80px;
+          }
+     }
+     &-bg-shape {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(4%, -30%);
+          z-index: -1;
+     }
+     &-title {
+          color: var(--tj-color-common-white);
+          font-weight: var(--tj-fw-bold);
+          margin-bottom: 12px;
+     }
+     &-body {
+          font-family: var(--tj-ff-heading);
+          font-weight: var(--tj-fw-medium);
+          font-size: 18px;
+          color: var(--tj-color-common-white);
+          margin-bottom: 0;
+          & .spacing {
+               margin: 0 10px 0;
+          }
+     }
+}
+/* !END: Breadcrumb CSS */

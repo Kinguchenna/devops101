@@ -1,0 +1,247 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Cartmini CSS
+----------------------------------------*/
+
+.cartmini{
+    &__top{
+        &-title{
+            padding: 20px 0;
+            border-bottom: 1px solid var(--tj-color-border-primary);
+            & h4{
+                font-size: 16px;
+                text-transform: capitalize;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__close{
+      position: absolute;
+      top: 17px;
+      right: 20px;
+    &-btn{
+        background: transparent;
+        color: var(--tj-color-common-black);
+        font-size: 22px;
+        &:hover{
+          @include transform(rotate(90deg));
+        }
+      }
+    }
+    &__shipping{
+        padding: 15px 0;
+        border-bottom: 1px solid var(--tj-color-border-primary);
+        & .progress{
+            height: 10px;
+            border-radius: 0;
+            &-bar{
+                background-color: var(--tj-color-theme-primary);
+            }
+        }
+
+        & p{
+            margin-bottom: 5px;
+            & span{
+                font-weight: var(--tj-fw-sbold);
+            }
+        }
+    }
+    &__content{
+      & a{
+        font-size: 15px;
+        margin-bottom: 12px;
+        font-weight: var(--tj-fw-medium);
+        transition: all .3s ease;
+        &:hover{
+          color: var(--tj-color-theme-primary);
+        }
+      }
+    }
+    &__widget{
+        height: 100%;
+        &-item{
+          position: relative;
+          display: flex;
+          padding: 20px;
+          padding-right: 35px;
+          border-bottom: 1px solid rgba(129, 129, 129, 0.2);
+          transition: background-color 0.3s;
+            &:last-child{
+                border-bottom: 0;
+            }
+        }
+    }
+    &__thumb{
+        margin-right: 15px;
+        & img{
+            width: 70px;
+            height: 90px;
+            object-fit: cover;
+        }
+    }
+    &__title{
+        font-weight: var(--tj-fw-medium);
+        padding: 20px 20px;
+        border-bottom: 1px solid rgba(129, 129, 129, 0.2);
+        box-shadow: 0 0 10px 0 rgba(129, 129, 129, 0.2);
+        & h4{
+          font-size: 16px;
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }    
+    }
+    &__del{
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        color: var(--tj-color-common-black);
+        font-size: 14px;
+        &:hover{
+            color: var(--tj-color-theme-primary);
+        }
+    }
+    &__checkout{
+        padding: 20px;
+        padding-bottom: 85px;
+        width: 100%;
+        background: var(--tj-color-common-white);
+        border-top: 2px solid rgba(129, 129, 129, 0.2);
+        &-title{
+            & h4{
+                font-size: 18px;
+                display: inline-block;
+                margin-bottom: 0;
+                color: var(--tj-color-common-black);
+            }
+            & span{
+              float: right;
+              font-size: 20px;
+              font-weight: var(--tj-fw-sbold);
+              color: var(--tj-color-theme-primary);
+            }
+        }
+    }
+    &__price{
+        font-size: 14px;
+        font-weight: var(--tj-fw-medium);
+        color: var(--tj-color-theme-primary);
+    }
+    &__quantity{
+        font-size: 12px;
+        font-weight: var(--tj-fw-medium);
+        color: var(--tj-color-theme-primary);
+    }
+    &__checkout-title {
+        margin-bottom: 30px;
+    }
+    &__empty{
+        margin-top: 150px;
+        & img{
+            margin-bottom: 30px;
+        }
+
+        & p{
+            font-size: 16px;
+            color: var(--tj-color-common-black);
+            margin-bottom: 15px;
+        }
+    }
+    &-btn{
+        display: inline-block;
+        font-size: 16px;
+        color: var(--tj-color-common-white);
+        background: var(--tj-color-common-black);
+        text-align: center;
+        padding: 10px 30px;
+        position: relative;
+        text-transform: capitalize;
+        z-index: 1;
+        overflow: hidden;
+        letter-spacing: -0.02em;
+        border: 1px solid var(--tj-color-common-black);
+        transition: .4s;
+      &:hover{
+        border: 1px solid rgba(129, 129, 129, 0.2);
+        color: var(--tj-color-common-black);
+        background: transparent;
+      }
+      &-border{
+        display: inline-block;
+        font-weight: var(--tj-fw-medium);
+        color: var(--tj-color-common-black);
+        border: 1px solid rgba(129, 129, 129, 0.2);
+        text-align: center;
+        padding: 10px 30px;
+        font-size: 15px;
+        text-transform: capitalize;
+        &:hover{
+          background: var(--tj-color-common-black);
+          border: 1px solid var(--tj-color-common-black);
+          color: var(--tj-color-common-white);
+        }
+      }
+    }
+    &__area{
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 360px;
+      height: 100%;
+      transform: translateX(calc(100% + 80px));
+      background: var(--tj-color-common-white) none repeat scroll 0 0;
+      -moz-transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+      transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+      z-index: 9999;
+      overflow-y: scroll;
+      overscroll-behavior-y: contain;
+      scrollbar-width: none;
+      &.cartmini-opened {
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+    &__wrapper {
+      position: relative;
+      min-height: 100%;
+    }
+    &-overlay{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2222;
+      width: 100%;
+      height: 100%;
+      background: rgb(24, 24, 24);
+      backdrop-filter: blur(15px);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.45s ease-in-out;
+      &.openeds{
+        opacity: 1;
+        visibility: visible;
+        opacity: 0.7;
+      }
+    }
+    &-item{
+      &-count{
+        top: -10px;
+        right: -9px;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: var(--tj-fw-bold);
+        color: var(--tj-color-common-white);
+        background-color: var(--tj-color-theme-primary);
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        border-radius: 50%;
+      }
+    }
+}
+/* !END: Cartmini CSS */

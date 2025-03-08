@@ -1,0 +1,28 @@
+
+
+{% load static %}
+
+
+{% if recentPosts %}
+                                        {% for post in recentPosts %}
+                                            <div class="single-post d-flex">
+                                                <div class="post-image">
+                                                    <a href="{% url 'fresh:blogDetails' post.slug %}">
+                                                        {% if post.image %}
+                                                        <img class="attachment-thumbnail size-thumbnail wp-post-image" src="{{ post.image.url }}" alt="{{ post.name }}">
+                                                            {% endif %}
+                                                    </a>
+                                                </div>
+                                                <div class="post-content">
+                                                    <span class="sub-title">
+                                                        <i class="flaticon-calendar"></i>
+                                                        <!-- Assuming you have a `date` or `created_at` field in your Blog model -->
+                                                        {{ post.created_at|date:"b d Y" }}  <!-- Change "created_at" if your field name differs -->
+                                                    </span>
+                                                    <h5 class="title-link">
+                                                        <a href="{% url 'fresh:blogDetails' post.slug %}">{{ post.name }}</a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}

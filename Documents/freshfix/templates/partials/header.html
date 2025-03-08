@@ -1,0 +1,130 @@
+{% load static %}
+
+<header class="tj-header-area tj-header-absolute">
+    <div class="tj-header-top d-none d-md-block">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="tj-header-top-wrapper">
+                        <div class="tj-header-top-logo d-none d-xl-block">
+                            {% if logo %}
+                        
+                                <a href="/"><img src="{{ logo.logo.url }}" alt="FreshFix" ></a>
+                            
+                            {% else %}
+                
+                            {% endif %}
+                        </div>
+                        <div class="h1-header-infos">
+                            <div class="infos-item">
+                                <div class="infos-icon">
+                                    <i class="flaticon-call"></i>
+                                </div>
+                                <div class="infos-content">
+                                    <span class="label">Call Us</span>
+                                    <span><a href="tel:{{contactaddress.phoneone}}">  {{contactaddress.phoneone}} </a></span>
+                                </div>
+                            </div>
+                            <div class="infos-item">
+                                <div class="infos-icon">
+                                    <i class="flaticon-email-2"></i>
+                                </div>
+                                <div class="infos-content">
+                                    <span class="label">Email Us</span>
+                                    <span><a href="mailto:{{contactaddress.emailone}}">{{contactaddress.emailone}}</a></span>
+                                </div>
+                            </div>
+                            <div class="infos-item">
+                                <div class="infos-icon">
+                                    <i class="flaticon-location"></i>
+                                </div>
+                                <div class="infos-content">
+                                    <span class="label">Location</span>
+                                    <span class="location">{{contactaddress.addressone}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tj-header-top-social d-none d-lg-block">
+                            <ul>
+                                <li><a href="{{contactaddress.facebook}}"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
+                                <li><a href="{{contactaddress.twitter}}"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="{{contactaddress.linkedin}}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="{{contactaddress.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tj-header-bottom">
+        <div class="container gx-0">
+            <div class="row gx-0">
+                <div class="col">
+                    <div class="tj-header-bottom-wrapper tj-header-bottom-row">
+                        <div class="tj-header-bottom-mobile-logo d-block d-xl-none">
+                            <!-- {% if logo %}
+                        
+                            <a href="/"><img src="{{ logo.logo.url }}" alt="FreshFix" ></a>
+                        
+                            {% else %}
+                
+                            {% endif %} -->
+
+                            <img src="{% static 'assets/images/logo/freshfix05.png' %}" alt="Logos">
+                        </div>
+                        <div class="tj-header-bottom-left d-none d-xl-block">
+                            <div class="mainmenu-wrapper">
+                                <div class="mainmenu-box">
+                                    {% include 'partials/mainmenu.html' %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tj-header-bottom-right">
+                            <div class="tj-header-bottom-search d-none d-xl-block">
+                                <button class="tj-header-search tj-search-popup"><i class="flaticon-search"></i></button>
+                            </div>
+
+                            <div class="">
+                                {% if user.is_authenticated %}
+                        
+                                    {% if user.profile.account_type == 'admin' %}
+                                        <!-- Show Admin Dashboard Link -->
+                                        <a href="{% url 'fresh:dashboard' %}" class=""><i class="flaticon-user"></i> </a>
+                                    {% elif user.profile.account_type == 'user' %}
+                                        <!-- Show User Logout Link -->
+                                        <a href="{% url 'fresh:logout_view' %}" class=""><i class="flaticon-user"></i> </a>
+                                        {% elif user.profile.account_type == 'seller' %}
+                                        <!-- Show User Logout Link -->
+                                        <a href="{% url 'fresh:logout_view' %}" class=""><i class="flaticon-user"></i> </a>
+                                    {% endif %}
+                                {% else %}
+                                    <!-- Show Login Link if the user is not logged in -->
+                                    <a href="{% url 'fresh:login_view' %}" class=""><i class="flaticon-user"></i> Login</a>
+                                {% endif %}
+                            </div>
+
+                            <div class="tj-header-bottom-mobile-button d-block d-xl-none">
+                                <button class="tj-header-bottom-mobile-btn menu-bar">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                            <div class="tj-header-bottom-button d-none d-xl-block">
+                                <a class="tj-header-btn tj-arrow-btn" href="{% url 'fresh:contact' %}">Get a quote 
+                                    <span class="icon_box">
+                                        <i class="icon_first fa-regular fa-arrow-right"></i>
+                                        <i class="icon_second fa-regular fa-arrow-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+

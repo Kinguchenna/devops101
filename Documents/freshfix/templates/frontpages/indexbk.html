@@ -1,0 +1,1000 @@
+
+
+{% extends 'partials/base.html' %}
+{% load static %}
+
+    <!--End header-->
+ 
+    {% block meta_tags %}
+   
+        <meta name="description" content="International School & Job Portal - Admissions and Career Opportunities for Global Students and Professionals">
+        <meta name="keywords" content="International School, Admissions, Job Portal, Career Opportunities, Global Students, Global Jobs, Education, Apply Now, Employment, University, Scholarships">
+        <title>International School & Job Portal - Admissions & Career Opportunities</title>
+    {% endblock meta_tags %}
+
+
+    
+
+{%  block content %}
+
+<body>
+    <div class="body-overlay"></div>
+
+    <!-- Loader Start -->
+ 
+    <!-- Loader End -->
+
+    <!-- back to top start -->
+    {% include 'partials/backtotop.html' %}
+    <!-- back to top end -->
+
+    <!-- Search Popup Start -->
+    {% include 'partials/searchpopup.html' %}
+    <!-- Search Popup End-->
+
+    <!-- cart mini area start -->
+    {% include 'partials/cartmini.html' %}
+    <!-- cart mini area end -->
+
+    <!-- Hamburger start -->
+    {% include 'partials/harmburger.html' %}
+    <!-- Hamburger end -->
+
+    <!-- Header Area Start -->
+    {% include 'partials/header.html' %}
+    <!-- Header Area End-->
+
+    <!-- Sticky Header Area Start -->
+      {% include 'partials/fixedheadertop.html' %}
+    <!-- Sticky Header Area End -->
+
+    <main id="primary" class="site-main">
+
+        <!-- Slider Area Start-->
+        <section class="tj-slider-area fix scene">
+            <div class="tj-slider-height">
+                <div class="tj-slider-bg tj-slider-overlay" data-background="{% if slider.background_image %}{{ slider.background_image.url }}{% else %}{% static 'assets/images/default-bg.jpg' %}{% endif %}"></div>
+
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-xl-7 col-lg-8">
+                            <div class="tj-slider-content">
+                                <div class="tj-slider-title-box">
+                                    <h6 class="tj-slider-sub-title wow fadeInRight" data-wow-delay=".3s">
+                                        <span><i class="flaticon-start"></i></span>{{ slider.sub_title }}
+                                    </h6>
+                                    <h1 class="tj-slider-title wow fadeInUp" data-wow-delay=".4s">{{ slider.title }}</h1>
+                                    <p class="tj-slider-paragraph wow fadeInUp" data-wow-delay=".5s">{{ slider.paragraph }}</p>
+                                </div>
+                                <div class="tj-slider-btn-box wow fadeInUp" data-wow-delay=".6s">
+                                    <a class="tj-primary-btn tj-hover-btn" href="{{ slider.contact_link }}">
+                                        <span>Describe more <i class="flaticon-start"></i></span>
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                    <div class="tj-slider-call-btn">
+                                        <div class="tj-slider-call-icon">
+                                            <a href="tel:{{ slider.contact_number }}"><i class="flaticon-call"></i></a>
+                                        </div>
+                                        <div class="tj-slider-call-text">
+                                            <a href="tel:{{ slider.contact_number }}">{{ slider.contact_number }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-4">
+                            <div class="tj-slider-thumb wow fadeInUp" data-wow-delay=".8s">
+                                {% if slider.slider_image %}
+                                <img src="{{ slider.slider_image.url }}" alt="">
+                            {% else %}
+                                <p>No image available</p>
+                            {% endif %}
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tj-slider-bg-shape">
+                    <div class="tj-slider-bg-shape-1"></div>
+                    <img class="tj-slider-bg-shape-2" src="{% static 'assets/images/slider/slider-bg-shape-2.png' %}" alt="">
+                    <div class="tj-slider-bg-shape-3"></div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Slider Area End-->
+
+        <!-- About Area Start-->
+        <section class="tj-about-area">
+            <div class="tj-about-bg-shape">
+                <img class="tj-about-bg-shape-1" src="{% static 'assets/images/about/about-bg-shape-1.png' %}" alt="">
+                <img class="tj-about-bg-shape-2" src="{% static 'assets/images/about/about-bg-shape-2.png' %}" alt="">
+                <img class="tj-about-bg-shape-3" src="{% static 'assets/images/about/about-bg-shape-3.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-5 column_1">
+                        <div class="tj-about-thumb wow fadeInLeft" data-wow-delay=".5s">
+                            {% if about.background_image %}
+                            <img src="{{ about.background_image.url }}" alt="">
+                            {% else %}
+                                <p>No image available</p>
+                            {% endif %}
+                            <div class="tj-about-thumb-shape">
+                                <img class="tj-about-thumb-shape-1" src="{% static 'assets/images/about/about-thumb-shape-1.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-7 col-md-10 column_2">
+                        <div class="tj-about-wrapper wow fadeInRightSlow" data-wow-duration="1400ms">
+                            <div class="tj-section-wrapper">
+                                <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> {{about.sub_title}}</h5>
+                                <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">{{about.title}}</h2>
+                                <p class="tj-section-paragraph wow fadeInUp" data-wow-delay=".4s">{{about.paragraph}}</p>
+                            </div>
+                            <div class="tj-about-box wow fadeInUp" data-wow-delay=".5s">
+                                <div class="tj-about-box-thumb">
+                                    {% if about.slider_image %}
+                                    <img src="{{ about.slider_image.url }}" alt="">
+                                    {% else %}
+                                        <p>No image available</p>
+                                    {% endif %}
+                                    <div class="tj-about-thumb-paly-btn">
+                                        <a class="popup-videos-button" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=MLpWrANjFbI">
+                                            <i class="flaticon-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="tj-about-box-thumb-list">
+                                    <ul>
+                                        <li><span><i class="fa-regular fa-angle-right"></i></span> {{about.list_one}}  </li>
+                                        <li><span><i class="fa-regular fa-angle-right"></i></span> {{about.list_two}}</li>
+                                        <li><span><i class="fa-regular fa-angle-right"></i></span>{{about.list_three}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tj-about-bottom wow fadeInUp" data-wow-delay=".6s">
+                                <div class="tj-about-btn">
+                                    <a class="tj-primary-btn tj-hover-btn" href="about.html"><span> {{about.btntext}}   <i class="flaticon-start"></i></span>
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                                <div class="tj-about-member-details">
+                                    <div class="tj-about-member-details-img">
+                                        {% if about.profile %}
+                                        <img src="{{ about.profile.url }}" alt="">
+                                        {% else %}
+                                            <p>No image</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="tj-about-member-details-content">
+                                        <h6 class="tj-about-member-tittle">{{about.name}} </h6>
+                                        <p class="tj-about-member-paragraph">{{about.job}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Area End-->
+
+        <!-- Service Area Start-->
+        <section class="tj-service-inner-page-area fix">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="tj-service-2-wrapper">
+                        {% if services %}
+                        {% for service in services %}
+                        <div class="tj-service-2-item wow fadeInLeft" data-wow-delay=".5s">
+                            <div class="tj-service-2-thumb">
+                                {% if service.image %}
+                                <img src="{{service.image.url}}" alt="">
+                                {% endif %}
+                            </div>
+                            <div class="tj-service-2-box">
+                                <div class="tj-service-2-wrap">
+                                    <div class="tj-service-2-icon">
+                                        <span><i class="flaticon-cleaning"></i></span>
+                                    </div>
+                                    <div class="tj-service-2-number">
+                                        <span> {{ forloop.counter }}</span>
+                                    </div>
+                                </div>
+                                <div class="tj-service-2-content">
+                                    <h4 class="tj-service-2-title">
+                                        <a href="{% url 'fresh:serviceDetails' service.slug %}"> {{service.name}}  </a></h4>
+                                    <p class="tj-service-2-paragraph">{{service.description|truncatechars:145|safe}}</p>
+                                    <div class="tj-service-2-button">
+                                        <a class="tj-service-2-btn tj-arrow-btn" href="{% url 'fresh:serviceDetails' service.slug %}">Read More                                         
+                                            <span class="icon_box">
+                                                <i class="icon_first fa-regular fa-arrow-right"></i>
+                                                <i class="icon_second fa-regular fa-arrow-right"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                       
+                    </div>
+                    <div class="tj-service-2-bottom-button wow fadeInUp" data-wow-delay=".7s">
+                        <a class="tj-primary-btn tj-hover-btn" href="{% url 'fresh:service' %}">
+                            <span>browse all services <i class="flaticon-start"></i>
+                        </span>
+                            <div class="tj-hover-btn-circle-dot"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tj-service-2-bg-shape">
+                <div class="tj-service-2-bg-shape-1">
+                    <img src="{% static 'assets/images/service/service-2-bg-shape.png' %}" alt="Images">
+                </div>
+            </div>
+        </section>
+        <!-- Service Area End-->
+
+        <!-- Team Area Start-->
+        <section class="tj-team-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper">
+                            <div class="sec-text wow fadeInLeft" data-wow-delay=".3s">
+                                <h5 class="tj-section-subtitle">
+                                <span class="one"><i class="flaticon-start"></i></span> Our team Member</h5>
+                                <h2 class="tj-section-title">Our Professional Expert Team</h2>
+                            </div>
+                            <div class="tj-team-top-button wow fadeInRight d-none d-lg-inline-block" data-wow-delay=".3s">
+                                <a class="tj-round-btn" href="contact.html">View All member <i class="fa-regular fa-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    {% if teams %}
+                    {% for team in teams %}
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                        <div class="tj-team-wrapper wow fadeInUp" data-wow-delay=".4s">
+                            <div class="tj-team-thumb">
+                                <a href="{% url 'fresh:contact' %}">
+                                    
+                                    {% if team.image %}
+                                    <img src="{{team.image.url}}" alt="">
+                                    {% endif %}
+
+                                </a>
+                            </div>
+                            <div class="tj-team-social">
+                                <div class="tj-team-btn">
+                                    <button><i class="flaticon-share"></i></button>
+                                </div>
+                                <div class="tj-team-icon">
+                                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fa-brands fa-vimeo-v"></i></a>
+                                </div>
+                            </div>
+                            <div class="tj-team-content">
+                                <h4 class="tj-team-title"><a href="team-details.html"> {{team.name}}  </a></h4>
+                                <p class="tj-team-paragraph"> {{team.job}}   </p>
+                                <div class="tj-team-button">
+                                    <a class="tj-team-call-btn" href="tel:{{team.phone}}"><i class="fa-solid fa-phone-volume"></i> 
+                                        {{team.phone}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                   
+                    <div class="tj-team-top-button d-lg-none wow fadeInUp" data-wow-delay=".8s">
+                        <a class="tj-round-btn" href="{% url 'fresh:contact' %}">View All member <i class="fa-regular fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Team Area End-->
+
+        <!-- Before-After Area Start-->
+        <!-- <section class="tj-before-after-area">
+            <div class="tj-before-after-bg" data-background="{% static 'assets/images/before-after/before-after0-bg.jpg' %}"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper text-center">
+                            <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> Before & after <span class="two"><i class="flaticon-start"></i></span> </h5>
+                            <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">Recent Completed Projects</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tj-before-after-wrapper wow fadeInUp" data-wow-delay=".5s">
+                            <img src="{% static 'assets/images/before-after/before-after-11.png' %}" alt="">
+                            <img src="{% static 'assets/images/before-after/before-after-21.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Before-After Area End-->
+
+        <!-- Choose-us Area Start-->
+        <section class="tj-choose-us-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper">
+                            <div class="sec-text wow fadeInLeft" data-wow-delay=".3s">
+                                <h5 class="tj-section-subtitle"><span class="one"><i class="flaticon-start"></i></span> why choose us</h5>
+                                <h2 class="tj-section-title">Transforming spaces one swipe at a time</h2>
+                            </div>
+                            <div class="desc wow fadeInRight" data-wow-delay=".3s">
+                                <p>This type of service is geared towards businesses, offices and commercial properties. It involves cleaning larger any spaces, including office high-traffic areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12 gx-0">
+                        <div class="tj-choose-us-wrapper wow fadeInUp" data-wow-delay=".4s">
+                            <div class="tj-choose-us-left-thumb">
+                                <img src="{% static 'assets/images/choose-us/choose-us-thumb1.png' %}" alt="Images">
+                            </div>
+                            <div class="tj-choose-us-inner">
+                                <div class="tj-choose-us-center-thumb">
+                                    <img src="{% static 'assets/images/choose-us/choose-us-center-thumb1.png' %}" alt="Images">
+                                </div>
+                                <div class="tj-choose-us-wrap">
+                                    <div class="tj-choose-us-item">
+                                        <div class="tj-choose-us-icon">
+                                            <span><i class="flaticon-top-three"></i></span>
+                                        </div>
+                                        <div class="tj-choose-us-content">
+                                            <h4 class="tj-choose-us-title">Top-Rated Company</h4>
+                                            <p class="tj-choose-us-paragraph">If you've hosted a party or event, you might a cleaning service to help</p>
+                                        </div>
+                                    </div>
+                                    <div class="tj-choose-us-item">
+                                        <div class="tj-choose-us-icon">
+                                            <span><i class="flaticon-quality-1"></i></span>
+                                        </div>
+                                        <div class="tj-choose-us-content">
+                                            <h4 class="tj-choose-us-title">Superior Quality</h4>
+                                            <p class="tj-choose-us-paragraph">This involves a thorough cleaning of entire space, including hard</p>
+                                        </div>
+                                    </div>
+                                    <div class="tj-choose-us-item">
+                                        <div class="tj-choose-us-icon">
+                                            <span><i class="flaticon-eco-oil"></i></span>
+                                        </div>
+                                        <div class="tj-choose-us-content">
+                                            <h4 class="tj-choose-us-title">Eco-Friendly Products</h4>
+                                            <p class="tj-choose-us-paragraph">For environmentally-conscious hosted customers, there are cleaning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="container">
+                <div class="row align-items-center tj-choose-us-bottom-row">
+                    <div class="col-xl-7 col-lg-8 col-md-8">
+                        <div class="tj-choose-us-bottom-content wow fadeInLeft" data-wow-delay=".3s">
+                            <h3 class="tj-choose-us-bottom-title">Went get your Cleaning Services?</h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4 col-md-4 col-12">
+                        <div class="tj-choose-us-bottom-button wow fadeInRight" data-wow-delay=".3s">
+                            <a class="tj-white-btn tj-hover-btn" href="contact.html"><span>Contact us <i class="flaticon-start"></i></span>
+                                <div class="tj-hover-btn-circle-dot"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tj-choose-us-bg-shape">
+                        <img class="tj-choose-us-bottom-bg-shape-1" src="{% static 'assets/images/choose-us/choose-us-bottom-bg-shape.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+                
+            
+        </section>
+        <!-- Choose-us Area End-->
+
+        <!-- Pricing Area Start-->
+        <!-- <section class="tj-pricing-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper text-center">
+                            <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> Pricing plan <span class="two"><i class="flaticon-start"></i></span> </h5>
+                            <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">Choose your Pricing Plan</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-pricing-wrapper wow fadeInUp" data-wow-delay=".5s">
+                            <div class="tj-pricing-price text-center">
+                                <h5 class="tj-pricing-price-subtitle">Basic Plan</h5>
+                                <h2 class="tj-pricing-price-title"><span>$</span>15.22</h2>
+                            </div>
+                            <div class="tj-pricing-icon">
+                                <span><i class="flaticon-label"></i></span>
+                            </div>
+                            <div class="tj-pricing-bottom">
+                                <div class="tj-pricing-list">
+                                    <ul>
+                                        <li><span><i class="flaticon-start"></i></span> Commercial Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> House Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Plumbing Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Kitchen Cleaning</li>
+                                        <li class="inactive"><span><i class="flaticon-start"></i></span> Outdoor Service</li>
+                                        <li class="inactive"><span><i class="flaticon-start"></i></span> Construction Cleanup</li>
+                                    </ul>
+                                </div>
+                                <div class="tj-pricing-button">
+                                    <a class="tj-square-btn tj-hover-btn" href="contact.html">Choose Plan
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-pricing-wrapper active wow fadeInUp" data-wow-delay=".6s">
+                            <div class="tj-pricing-price text-center">
+                                <h5 class="tj-pricing-price-subtitle">Stander Plan</h5>
+                                <h2 class="tj-pricing-price-title"><span>$</span>20.30</h2>
+                            </div>
+                            <div class="tj-pricing-icon">
+                                <span><i class="flaticon-label"></i></span>
+                            </div>
+                            <div class="tj-pricing-bottom">
+                                <div class="tj-pricing-list">
+                                    <ul>
+                                        <li><span><i class="flaticon-start"></i></span> Commercial Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> House Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Plumbing Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Kitchen Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Outdoor Service</li>
+                                        <li class="inactive"><span><i class="flaticon-start"></i></span> Construction Cleanup</li>
+                                    </ul>
+                                </div>
+                                <div class="tj-pricing-button">
+                                    <a class="tj-square-btn active tj-hover-btn" href="contact.html">Choose Plan
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-pricing-wrapper wow fadeInUp" data-wow-delay=".7s">
+                            <div class="tj-pricing-price text-center">
+                                <h5 class="tj-pricing-price-subtitle">Premium Plan</h5>
+                                <h2 class="tj-pricing-price-title"><span>$</span>30.22</h2>
+                            </div>
+                            <div class="tj-pricing-icon">
+                                <span><i class="flaticon-label"></i></span>
+                            </div>
+                            <div class="tj-pricing-bottom">
+                                <div class="tj-pricing-list">
+                                    <ul>
+                                        <li><span><i class="flaticon-start"></i></span> Commercial Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> House Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Plumbing Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Kitchen Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Outdoor Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Construction Cleanup</li>
+                                    </ul>
+                                </div>
+                                <div class="tj-pricing-button">
+                                    <a class="tj-square-btn tj-hover-btn" href="contact.html">Choose Plan
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Pricing Area End-->
+
+        <!-- Portfolio Area End-->
+        <!-- <section class="tj-portfolio-area">
+            <div class="tj-portfolio-bg-shape">
+                <img class="tj-portfolio-bg-shape-1" src="{% static 'assets/images/portfolio/portfolio-bg-shape-1.png' %}" alt="">
+                <img class="tj-portfolio-bg-shape-2" src="{% static 'assets/images/portfolio/portfolio-bg-shape-2.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper">
+                            <div class="sec-text wow fadeInLeft" data-wow-delay=".3s">
+                                <h5 class="tj-section-subtitle"><span class="one"><i class="flaticon-start"></i></span> our portfolio </h5>
+                                <h2 class="tj-section-title">Our Impressive Case Studies</h2>
+                            </div>
+                            <div class="tj-portfolio-top-button wow fadeInRight d-none d-lg-inline-block" data-wow-delay=".3s">
+                                <a class="tj-round-btn" href="contact.html">View more <i class="fa-regular fa-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="tj-portfolio-slider wow fadeInUp" data-wow-delay=".4s">
+                            <div class="tj-portfolio-active swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="tj-portfolio-wrapper swiper-slide">
+                                        <div class="tj-portfolio-thumb">
+                                            <img src="{% static 'assets/images/portfolio/portfolio-img-11.jpg' %}" alt="Images">
+                                            <div class="tj-portfolio-wrap">
+                                                <div class="tj-portfolio-content">
+                                                    <h4 class="tj-portfolio-title"><a href="portfolio-details.html">Specialized Cleaning</a></h4>
+                                                    <p class="tj-portfolio-paragraph">Saint, UAS</p>
+                                                </div>
+                                                <div class="tj-portfolio-pluse-button">
+                                                    <a class="tj-portfolio-pluse-btn" href="portfolio-details.html"><i class="fa-solid fa-plus"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tj-portfolio-wrapper swiper-slide">
+                                        <div class="tj-portfolio-thumb">
+                                            <img src="{% static 'assets/images/portfolio/portfolio-img-22.jpg' %}" alt="Images">
+                                            <div class="tj-portfolio-wrap">
+                                                <div class="tj-portfolio-content">
+                                                    <h4 class="tj-portfolio-title"><a href="portfolio-details.html">Specialized Cleaning</a></h4>
+                                                    <p class="tj-portfolio-paragraph">Saint, UAS</p>
+                                                </div>
+                                                <div class="tj-portfolio-pluse-button">
+                                                    <a class="tj-portfolio-pluse-btn" href="portfolio-details.html"><i class="fa-solid fa-plus"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tj-portfolio-wrapper swiper-slide">
+                                        <div class="tj-portfolio-thumb">
+                                            <img src="{% static 'assets/images/portfolio/portfolio-img-33.jpg' %}" alt="Images">
+                                            <div class="tj-portfolio-wrap">
+                                                <div class="tj-portfolio-content">
+                                                    <h4 class="tj-portfolio-title"><a href="portfolio-details.html">Specialized Cleaning</a></h4>
+                                                    <p class="tj-portfolio-paragraph">Saint, UAS</p>
+                                                </div>
+                                                <div class="tj-portfolio-pluse-button">
+                                                    <a class="tj-portfolio-pluse-btn" href="portfolio-details.html"><i class="fa-solid fa-plus"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tj-portfolio-slide-dot d-none d-lg-inline-block text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Portfolio Area End-->
+
+        <!-- Contact Area Start-->
+        <section class="tj-contact-area">
+            <div class="tj-contact-bg-shape">
+                <img class="tj-contact-bg-shape-1" src="{% static 'assets/images/contact/contact-bg-shape-1.png' %}" alt="">
+                <img class="tj-contact-bg-shape-2" src="{% static 'assets/images/contact/contact-bg-shape-2.png' %}" alt="">
+                <img class="tj-contact-bg-shape-3" src="{% static 'assets/images/contact/contact-bg-shape-3.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-lg-5">
+                        <div class="tj-contact-thumb wow fadeInLeft" data-wow-delay=".5s">
+                            <img src="{% static 'assets/images/contact/contact-thumb1.png' %}" alt="">
+                            <div class="tj-contact-thumb-shape">
+                                <img class="tj-contact-thumb-shape-1" src="{% static 'assets/images/contact/contact-thumb-shape-1.png' %}" alt="">
+                                <img class="tj-contact-thumb-shape-2" src="{% static 'assets/images/contact/contact-thumb-shape-2.png' %}" alt="">
+                                <img class="tj-contact-thumb-shape-3" src="{% static 'assets/images/contact/contact-thumb-shape-3.png' %}" alt="">
+                                <img class="tj-contact-thumb-shape-4" src="{% static 'assets/images/contact/contact-thumb-shape-4.png' %}" alt="">
+                                <img class="tj-contact-thumb-shape-5" src="{% static 'assets/images/contact/contact-thumb-shape-5.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="tj-contact-form-wrapper">
+                            <div class="tj-contact-section-wrapper">
+                                <div class="tj-section-wrapper">
+                                    <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> Contact us </h5>
+                                    <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">Book and Appointment</h2>
+                                </div>
+                            </div>
+
+                            
+
+                            
+                            <form  accept="{% url 'fresh:sendToMail' %}"  method="POST" class="theme-form theme-form-2 mega-form" id="addServiceForm">
+                             {% csrf_token %}
+                            <div class="row wow fadeInUp">
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="form-input wow fadeInLeft" data-wow-delay=".5s">
+                                        <input type="text" id="name" name="name" placeholder="Your Name" >
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="form-input wow fadeInRight" data-wow-delay=".5s">
+                                        <input type="email" id="email" name="email" placeholder="Your Email" >
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="form-input wow fadeInLeft" data-wow-delay=".6s">
+                                        <input type="text" id="subject" name="subject" placeholder="Subject" >
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="form-input wow fadeInRight" data-wow-delay=".6s">
+                                        <div class="tj-nice-select-box">
+                                            <div class="tj-select">
+                                                <select  name="service" id="service">
+                                                    <option value="2">Please choose an option</option>
+                                                    <option value="2">Home Renovation</option>
+                                                    <option value="2">Constructions</option>
+                                                    <option value="2">Architecture Design</option>
+                                                    <option value="2">Residential Space</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-input wow fadeInUp" data-wow-delay=".7s">
+                                        <textarea name="text" id="message" placeholder="Write Message..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div >
+                                        <button class="tj-contact-btn tj-hover-btn" id="addServiceButton" type="submit">Submit
+                                            <span class="tj-hover-btn-circle-dot"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                            <div id="responseMessage" class="mt-3"></div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Area End-->
+
+        <!-- Testimonial Area Start-->
+        <section class="tj-testimonial-area" data-background="assets/images/testimonial/testimonial-bg.jpg">
+            <div class="tj-testimonial-bg-shape">
+                <img class="tj-testimonial-bg-shape-1" src="{% static 'assets/images/testimonial/testimonial-bg-shape.png' %}" alt="">
+                <img class="tj-testimonial-bg-shape-2" src="{% static 'assets/images/testimonial/testimonial-bg-overlay-shape.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper text-center">
+                            <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> Testimonial <span class="two"><i class="flaticon-start"></i></span> </h5>
+                            <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">What our clients say
+                                About Us</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="tj-testimonial-slider wow fadeInUp" data-wow-delay=".5s">
+                            <div class="tj-testimonial-active swiper-container">
+                                <div class="swiper-wrapper">
+
+                                    <!-- slide 1 -->
+                                    <div class="tj-testimonial-wrapper swiper-slide">
+                                        <div class="tj-testimonial-top">
+                                            <div class="tj-testimonial-top-member-details">
+                                                <div class="tj-testimonial-top-member-img">
+                                                    <img src="{% static 'assets/images/testimonial/testi-member-img-11.png' %}" alt="">
+                                                </div>
+                                                <div class="tj-testimonial-top-member-content">
+                                                    <div class="testimonial-rating">
+                                                        <div class="star-ratings">
+                                                           <div class="fill-ratings" style="width: 88%">
+                                                              <span>★★★★★</span>
+                                                           </div>
+                                                           <div class="empty-ratings">
+                                                              <span>★★★★★</span>
+                                                           </div>
+                                                        </div>
+                                                     </div>
+                                                    <h4 class="tj-testimonial-top-member-title">Brooklyn Simmons</h4>
+                                                    <p class="tj-testimonial-top-member-paragraph">Business Man</p>
+                                                </div>
+                                            </div>
+                                            <div class="tj-testimonial-top-quate-icon">
+                                                <span><i class="flaticon-right-quotation-mark"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="tj-testimonial-bottom">
+                                            <p class="tj-testimonial-bottom-paragraph">Many cleaning service providers allow customers to book services online or over the phone. Customers can typically choose the type of service, the date and time of may need.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 2 -->
+                                    <div class="tj-testimonial-wrapper swiper-slide">
+                                        <div class="tj-testimonial-top">
+                                            <div class="tj-testimonial-top-member-details">
+                                                <div class="tj-testimonial-top-member-img">
+                                                    <img src="{% static 'assets/images/testimonial/testi-member-img-22.png' %}" alt="">
+                                                </div>
+                                                <div class="tj-testimonial-top-member-content">
+                                                    <div class="testimonial-rating">
+                                                        <div class="star-ratings">
+                                                           <div class="fill-ratings" style="width: 88%">
+                                                              <span>★★★★★</span>
+                                                           </div>
+                                                           <div class="empty-ratings">
+                                                              <span>★★★★★</span>
+                                                           </div>
+                                                        </div>
+                                                     </div>
+                                                    <h4 class="tj-testimonial-top-member-title">Savannah Nguyen</h4>
+                                                    <p class="tj-testimonial-top-member-paragraph">Architect</p>
+                                                </div>
+                                            </div>
+                                            <div class="tj-testimonial-top-quate-icon">
+                                                <span><i class="flaticon-right-quotation-mark"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="tj-testimonial-bottom">
+                                            <p class="tj-testimonial-bottom-paragraph">Many cleaning service providers allow customers to book services online or over the phone. Customers can typically choose the type of service, the date and time of may need.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 3 -->
+                                    <div class="tj-testimonial-wrapper swiper-slide">
+                                        <div class="tj-testimonial-top">
+                                            <div class="tj-testimonial-top-member-details">
+                                                <div class="tj-testimonial-top-member-img">
+                                                    <img src="{% static 'assets/images/testimonial/testi-member-img-2.png' %}" alt="">
+                                                </div>
+                                                <div class="tj-testimonial-top-member-content">
+                                                    <div class="testimonial-rating">
+                                                        <div class="star-ratings">
+                                                           <div class="fill-ratings" style="width: 88%">
+                                                              <span>★★★★★</span>
+                                                           </div>
+                                                           <div class="empty-ratings">
+                                                              <span>★★★★★</span>
+                                                           </div>
+                                                        </div>
+                                                     </div>
+                                                    <h4 class="tj-testimonial-top-member-title">Savannah Nguyen</h4>
+                                                    <p class="tj-testimonial-top-member-paragraph">Architect</p>
+                                                </div>
+                                            </div>
+                                            <div class="tj-testimonial-top-quate-icon">
+                                                <span><i class="flaticon-right-quotation-mark"></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="tj-testimonial-bottom">
+                                            <p class="tj-testimonial-bottom-paragraph">Many cleaning service providers allow customers to book services online or over the phone. Customers can typically choose the type of service, the date and time of may need.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tj-testimonial-slide-dot text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial Area End-->
+
+        <!-- Blog Area Start-->
+        <section class="tj-blog-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper">
+                            <div class="sec-text wow fadeInLeft" data-wow-delay=".3s">
+                                <h5 class="tj-section-subtitle"><span class="one"><i class="flaticon-start"></i></span> Blog & News </h5>
+                                <h2 class="tj-section-title">Latest New and Blog</h2>
+                            </div>
+                            <div class="tj-blog-top-button d-none d-lg-inline-block wow fadeInRight" data-wow-delay=".3s">
+                                <a class="tj-round-btn" href="contact.html">View more <i class="fa-regular fa-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-blog-wrapper wow fadeInUp" data-wow-delay=".4s">
+                            <div class="tj-blog-thumb">
+                                <a href="blog-details.html">
+                                    <img src="{% static 'assets/images/blog/blog-thumb-11.jpg' %}" alt="">
+                                </a>
+                                <div class="tj-blog-date">
+                                    <span class="one">10</span>
+                                    <span class="two">Feb</span>
+                                </div>
+                            </div>
+                            <div class="tj-blog-content">
+                                <div class="tj-blog-meta">
+                                    <span><i class="flaticon-user"></i> By<a href="#"> Cleannes</a></span>
+                                    <span><i class="flaticon-comment"></i> Comments (09)</span>
+                                </div>
+                                <h4 class="tj-blog-title"><a href="blog-details.html">Let us handle the dirt while you enjoy the shine</a></h4>
+                                <p class="tj-blog-paragraph"> The cost of cleaning services is vary depending on factors such as the size of space</p>
+                                <div class="tj-blog-button">
+                                    <a class="tj-blog-btn tj-arrow-btn" href="blog-details.html">Read More                                         
+                                        <span class="icon_box">
+                                            <i class="icon_first fa-regular fa-arrow-right"></i>
+                                            <i class="icon_second fa-regular fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tj-blog-wrapper-shape">
+                                <img src="{% static 'assets/images/blog/blog-wrapper-shape.svg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-blog-wrapper wow fadeInUp" data-wow-delay=".5s">
+                            <div class="tj-blog-thumb">
+                                <a href="blog-details.html">
+                                    <img src="{% static 'assets/images/blog/blog-thumb-22.jpg' %}" alt="">
+                                </a>
+                                <div class="tj-blog-date">
+                                    <span class="one">10</span>
+                                    <span class="two">Feb</span>
+                                </div>
+                            </div>
+                            <div class="tj-blog-content">
+                                <div class="tj-blog-meta">
+                                    <span><i class="flaticon-user"></i> By<a href="#"> Cleannes</a></span>
+                                    <span><i class="flaticon-comment"></i> Comments (09)</span>
+                                </div>
+                                <h4 class="tj-blog-title"><a href="blog-details.html">Experience the brilliance of a spotless environment</a></h4>
+                                <p class="tj-blog-paragraph"> It's important to choose a cleaning service any provider that is licensed, bonded</p>
+                                <div class="tj-blog-button">
+                                    <a class="tj-blog-btn tj-arrow-btn" href="blog-details.html">Read More                                         
+                                        <span class="icon_box">
+                                            <i class="icon_first fa-regular fa-arrow-right"></i>
+                                            <i class="icon_second fa-regular fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="tj-blog-wrapper-shape">
+                                <img src="{% static 'assets/images/blog/blog-wrapper-shape.svg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-blog-wrapper wow fadeInUp" data-wow-delay=".6s">
+                            <div class="tj-blog-thumb">
+                                <a href="blog-details.html"><img src="{% static 'assets/images/blog/blog-thumb-33.jpg' %}" alt=""></a>
+                                <div class="tj-blog-date">
+                                    <span class="one">10</span>
+                                    <span class="two">Feb</span>
+                                </div>
+                            </div>
+                            <div class="tj-blog-content">
+                                <div class="tj-blog-meta">
+                                    <span><i class="flaticon-user"></i> By<a href="#"> Cleannes</a></span>
+                                    <span><i class="flaticon-comment"></i> Comments (09)</span>
+                                </div>
+                                <h4 class="tj-blog-title"><a href="blog-details.html">Leave the cleaning to us, and reclaim your time</a></h4>
+                                <p class="tj-blog-paragraph">Some cleaning companies offer eco-friendly or green cleaning services using</p>
+                                <div class="tj-blog-button">
+                                    <a class="tj-blog-btn tj-arrow-btn" href="blog-details.html">Read More                                         
+                                        <span class="icon_box">
+                                            <i class="icon_first fa-regular fa-arrow-right"></i>
+                                            <i class="icon_second fa-regular fa-arrow-right"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="tj-blog-wrapper-shape">
+                                    <img src="{% static 'assets/images/blog/blog-wrapper-shape.svg' %}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tj-blog-top-button text-center wow fadeInRight d-lg-none" data-wow-delay=".6s">
+                        <a class="tj-round-btn" href="contact.html">View more <i class="fa-regular fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Area End-->
+    </main>
+
+
+    <!-- Footer Area Start-->
+    {% include 'partials/footer.html' %}
+    <!-- Footer Area End-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#addServiceForm').on('submit', function (event) {
+                event.preventDefault();
+    
+                // Disable button
+                $('#addServiceButton').text('Submiting...').attr('disabled', true);
+    
+                // Collect data
+                const name = $('#name').val();
+                const email = $('#email').val();
+                const phone = $('#phone').val();
+                const service = $('#service').val(); 
+                const message = $('#message').val(); 
+                const csrfToken = $('meta[name="csrf-token"]').attr('content');
+    
+                // Validate fields
+                if (!name || !email || !service) {
+                    $('#responseMessage').html('<div class="alert alert-danger">Please fill all required fields.</div>');
+                    $('#addServiceButton').text('Submit').attr('disabled', false);
+                    return;
+                }
+    
+                // AJAX Request
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('phone', phone);
+                formData.append('service', service);
+                formData.append('message', message); 
+                formData.append('csrfmiddlewaretoken', csrfToken);
+
+          
+    
+                $.ajax({
+                    url: "{% url 'fresh:sendToMail' %}", // Replace with your URL
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        $('#responseMessage').html('<div class="alert alert-success">' + response.message + '</div>');
+                        $('#addServiceButton').text('Submit').attr('disabled', false);
+                        $('#addServiceForm')[0].reset();
+                    },
+                    error: function (xhr) {
+                        const error = xhr.responseJSON ? xhr.responseJSON.message : 'An error occurred.';
+                        $('#responseMessage').html('<div class="alert alert-danger">' + error + '</div>');
+                        $('#addServiceButton').text('Submit').attr('disabled', false);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+ 
+ 
+
+</body>
+
+{% endblock content %}
+
+
+
+ 

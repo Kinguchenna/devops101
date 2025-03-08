@@ -1,0 +1,200 @@
+@use "../utilities" as *;
+
+
+/**----------------------------------------
+START: Before-After CSS
+----------------------------------------*/
+
+.tj-before-after {
+    &-area {
+        position: relative;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        z-index: 1;
+        @media #{$md ,$sm, $xs} {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        & .tj-section {
+            &-subtitle {
+                color: var(--tj-color-common-white);
+                & img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+            &-title {
+                color: var(--tj-color-common-white);
+            }
+        }
+    }
+    &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 620px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: -1;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(7, 124, 234, .85);
+        }
+        @media #{$sm} {
+            height: 510px;
+        }
+        @media #{$xs} {
+            height: 480px;
+        }
+    }
+    &-wrapper {
+        overflow: hidden;
+        border-radius: 20px;
+        &::before {
+            content: "Before";
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            color: var(--tj-color-common-white);
+            z-index: 2;
+            transform: translate(-0%, -50%);
+            background: var(--tj-color-theme-primary);
+            padding: 3px 22px;
+            border-radius: 5px;
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-sbold);
+            font-size: 18px;
+            cursor: pointer;
+        }
+        &::after {
+            content: "After";
+            position: absolute;
+            top: 50%;
+            right: 50px;
+            color: var(--tj-color-common-white);
+            z-index: 1;
+            transform: translate(-0%, -50%);
+            background: var(--tj-color-theme-primary);
+            padding: 3px 22px;
+            border-radius: 5px;
+            font-family: var(--tj-ff-heading);
+            font-weight: var(--tj-fw-sbold);
+            font-size: 18px;
+            cursor: pointer;
+        }
+        & img {
+            max-width: inherit;
+            height: 570px;
+            object-fit: cover;
+            @media #{$md} {
+                height: 480px;
+            }
+            @media #{$sm} {
+                height: 375px;
+            }
+            @media #{$xs} {
+                height: 320px;
+            }
+        }
+        & div:nth-of-type(3) {
+            & div {
+                & div {
+                    background: var(--tj-color-theme-primary) !important;
+                    & span {
+                        position: relative;
+                        z-index: 1;
+                        &::before {
+                            content: "\f0de";
+                            position: absolute;
+                            top: 80%;
+                            left: -32px;
+                            font-family: var(--tj-ff-fontawesome);
+                            color: var(--tj-color-common-white);
+                            font-size: 24px;
+                            transform: translate(-0%, -50%);
+                            font-weight: bold;
+                            rotate: 90deg;
+                        }
+                        &::after {
+                            content: "\f0dd";
+                            position: absolute;
+                            top: 81%;
+                            left: 20px;
+                            font-family: var(--tj-ff-fontawesome);
+                            color: var(--tj-color-common-white);
+                            rotate: 90deg;
+                            transform: translate(0, 50%);
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        @media #{$sm} {
+            &::before {
+                left: 30px;
+            }
+            &::after {
+                right: 30px;
+            }
+        }
+        @media #{$xs} {
+            &::before {
+                left: 15px;
+                font-size: 16px;
+                padding: 3px 15px;
+            }
+            &::after {
+                right: 15px;
+                font-size: 16px;
+                padding: 3px 15px;
+            }
+        }
+    }
+    &-bg-shape-after {
+        &-1 {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            z-index: -1;
+            @media #{$xl,$lg} {
+                max-width: 500px;
+            }
+            @media #{$md} {
+                max-width: 380px;
+            }
+            @media #{$sm} {
+                max-width: 280px;
+            }
+            @media #{$xs} {
+                display: none;
+            }
+        }
+        &-2 {
+            position: absolute;
+            top: -2px;
+            right: 0;
+            z-index: -1;
+            @media #{$xl,$lg} {
+                max-width: 500px;
+            }
+            @media #{$md} {
+                max-width: 380px;
+            }
+            @media #{$sm} {
+                max-width: 280px;
+            }
+            @media #{$xs} {
+                display: none;
+            }
+        }
+    }
+}
+
+/* !END: Before-After CSS */

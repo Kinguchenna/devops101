@@ -1,0 +1,134 @@
+
+{% extends 'partials/base.html' %}
+{% load static %}
+
+    <!--End header-->
+    
+    {% block meta_tags %}
+        <meta name="description" content="International School & Job Portal - Admissions and Career Opportunities for Global Students and Professionals">
+        <meta name="keywords" content="International School, Admissions, Job Portal, Career Opportunities, Global Students, Global Jobs, Education, Apply Now, Employment, University, Scholarships">
+        <title>International School & Job Portal - Admissions & Career Opportunities</title>
+    {% endblock meta_tags %}
+
+    
+
+
+{%  block content %}
+
+<body>
+    <div class="body-overlay"></div>
+
+     <!-- Loader Start -->
+ 
+    <!-- Loader End -->
+
+    <!-- back to top start -->
+    {% include 'partials/backtotop.html' %}
+    <!-- back to top end -->
+
+    <!-- Search Popup Start -->
+    {% include 'partials/searchpopup.html' %}
+    <!-- Search Popup End-->
+
+    <!-- cart mini area start -->
+    {% include 'partials/cartmini.html' %}
+    <!-- cart mini area end -->
+
+    <!-- Hamburger start -->
+    {% include 'partials/harmburger.html' %}
+    <!-- Hamburger end -->
+
+    <!-- Header Area Start -->
+    {% include 'partials/header.html' %}
+    <!-- Header Area End-->
+
+    <!-- Sticky Header Area Start -->
+      {% include 'partials/fixedheadertop.html' %}
+    <!-- Sticky Header Area End -->
+
+    <main id="primary" class="site-main">
+
+        <!-- Breadcrumb Area Start-->
+        <section class="tj-breadcrumb-area" data-background="{% static 'assets/images/breadcrumb/breadcrumb-bg1.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="tj-breadcrumb-content text-center">
+                        <h2 class="tj-breadcrumb-title tj-char-animation">Privacy</h2>
+                        <p class="tj-breadcrumb-body"><span><a href="index.html">Home</a></span> <span class="spacing"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1639 8.42265C16.4818 8.74057 16.4818 9.25948 16.1639 9.57739L9.93661 15.8045C9.6182 16.1229 9.10024 16.1229 8.78187 15.8045L8.43354 15.4562C8.11485 15.1375 8.11478 14.6198 8.4335 14.301L13.1574 9.57753C13.4762 9.25884 13.4762 8.74106 13.1574 8.42237L8.43354 3.69885C8.11478 3.38012 8.11481 2.86248 8.43357 2.54375L8.7819 2.19542C9.09982 1.87751 9.61872 1.87751 9.93664 2.19542L16.1639 8.42265ZM3.34094 2.19535C3.02271 1.87708 2.50426 1.87712 2.18602 2.19535L1.8377 2.54368C1.5196 2.86178 1.51957 3.38068 1.8377 3.69881L6.5614 8.42237C6.88012 8.7411 6.88012 9.25881 6.5614 9.57753L1.83766 14.3011C1.51943 14.6193 1.51946 15.138 1.83766 15.4562L2.18599 15.8045C2.50436 16.1229 3.02253 16.1229 3.34091 15.8045L9.01506 10.1302C10.6067 11.7203 10.2041 11.317 9.01622 10.129L9.56782 9.57739C9.88595 9.25926 9.88591 8.74074 9.56782 8.42262L3.34094 2.19535Z" fill="white" />
+                          </svg></span> Privacy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tj-breadcrumb-bg-shape">
+                <img src="assets/images/breadcrumb/breadcrumb-bg-shape.png" alt="">
+            </div>
+        </section>
+        <!-- Breadcrumb Area End-->
+
+        <!-- Blog-Page Area Start-->
+        <section class="full-width tj-posts__area tj-blog-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tj-post__container tj-post-wrapper">
+                            <article class="tj__post tj-post-item details wow fadeInUp" data-wow-delay=".2s">
+                             
+                                <div class="tj-post__content">
+
+                                    <div class="details-title">
+                                        <h3 class="tj-post__title entry-title title tj-char-animation">
+                                            Privacy</h3>
+                                    </div>
+
+                                    <div class="tj-post__meta entry-meta blog-meta">
+                                        <span><i class="flaticon-calendar"></i> {{privacy.created_at}} </span>
+                                        <span><i class="flaticon-user"></i><span><a href="#">By Admin</a></span></span>
+                                      
+                                    </div>
+                                  
+                                    <div class="post_excerpt mb-3">
+                                         {{privacy.description|safe}}
+                                    </div>
+                              
+                                </div>
+                                <div class="tj-clearfix"></div>
+                            </article> 
+                            <div class="tj-post__content wow fadeInUp" data-wow-delay=".4s">
+                                <div class="details-title">
+                                    <h3 class="tj-post__title entry-title title tj-char-animation">Customize the cleaning services to fit my needs</h3>
+                                </div>
+                                <div class="post_excerpt mb-3">
+                                    Ensuring medical facilities meet hygiene and sanitation standards, including the cleaning of examination rooms, waiting areas, and equipment. Specialized cleaning for factories, warehouses, and other industrial spaces, often involving heavy-duty equipment cleaning and stain removal for furniture.
+                                </div>
+                                <div class="post_excerpt">
+                                    Compare pricing structures and understand what is included in the quoted price. Some services charge by the hour, while others offer flat rates that can tailor their offerings to meet your specific.
+                                </div>
+                            </div>
+                
+                            <div class="tj-post__content wow fadeInUp" data-wow-delay=".6s">
+                                <div class="post_excerpt mb-3">
+                                    Review any contracts or service agreements carefully, including terms of service, cancellation policies, and service is guarantees. If environmental impact is important to you, look for services that offer eco-friendly cleaning products or and practices. Ensure the service is insured and bonded to protect against damages or theft.
+                                </div>
+                            </div>
+                         
+                           
+                        </div>
+                    </div>
+                  
+                    <!--!sidebar -->
+                </div>
+            </div>
+        </section>
+        <!-- Blog-Page Area End-->
+
+    </main>
+
+    <!-- Footer Area Start-->
+    {% include 'partials/footer.html' %}
+    <!-- Footer Area End-->
+
+ 
+</body>
+
+{% endblock content %}

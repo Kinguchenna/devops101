@@ -1,0 +1,152 @@
+{% load static %}
+
+
+<footer class="tj-footer-area">
+    <div class="tj-footer-bg-shape">
+        <img src="{% static 'assets/images/footer/footer-bg-shape.png' %}" alt="">
+    </div>
+    <div class="tj-footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="tj-footer-top-wrapper">
+                        <div class="tj-footer-top-wrap">
+                            <div class="tj-footer-top-wrap-icon">
+                                <span><i class="flaticon-email-2"></i></span>
+                            </div>
+                            <div class="tj-footer-top-wrap-content">
+                                <span class="sub-title">Send Email</span>
+                                <span><a href="mailto:helpcleaning@gmail.com">{{contactaddress.emailone}}</a></span>
+                            </div>
+                        </div>
+                        <div class="tj-footer-top-wrap">
+                            <div class="tj-footer-top-wrap-icon">
+                                <span><i class="flaticon-call"></i></span>
+                            </div>
+                            <div class="tj-footer-top-wrap-content">
+                                <span class="sub-title">Need Any Cleaning Help</span>
+                                <span><a href="tel:+208555-0112">{{contactaddress.phoneone}}</a></span>
+                            </div>
+                        </div>
+                        <div class="tj-footer-top-wrap">
+                            <div class="tj-footer-top-wrap-icon">
+                                <span><i class="flaticon-location"></i></span>
+                            </div>
+                            <div class="tj-footer-top-wrap-content">
+                                <span class="sub-title">Our Address</span>
+                                <span class="location">{{contactaddress.addresstwo}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tj-footer-bottom">
+        <div class="container">
+            <div class="row tj-footer-bottom-row">
+                <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
+                    <div class="tj-footer-widget tj-footer-col-1">
+                        <div class="tj-footer-widget-logo">
+                            {% if logo %}
+                        
+                            <a href="/"><img src="{{ logo.logo.url }}" alt="FreshFix" ></a>
+                        
+                            {% else %}
+                
+                            {% endif %}
+                        </div>
+                        <div class="tj-footer-widget-paragraph">
+                            <p class="tj-footer-widget-paragraph">{{contactaddress.footertext}}</p>
+                        </div>
+                        <div class="tj-footer-widget-socail">
+                            <ul>
+                                <li><a href="{{contactaddress.facebook}}"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
+                                <li><a href="{{contactaddress.twitter}}"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="{{contactaddress.linkedin}}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="{{contactaddress.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="tj-footer-widget widget_nav_menu tj-footer-col-2">
+                        <h4 class="tj-footer-widget-title">Services</h4>
+                        <div class="tj-footer-widget-menu">
+                            <ul>
+                                      {% if services %}
+                                    {% for service in services %}
+                                <li><a href="#">
+                                    <span><i class="flaticon-start"></i></span>  {{service.name}}  </a>
+                                </li> 
+                                {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <div class="tj-footer-widget widget_nav_menu tj-footer-col-3">
+                        <h4 class="tj-footer-widget-title">Quick Link</h4>
+                        <div class="tj-footer-widget-menu">
+                            <ul>
+                                <li><a href="/"><span><i class="flaticon-start"></i></span> Home</a></li>
+                                <li><a href="{% url 'fresh:about' %}"><span><i class="flaticon-start"></i></span> About</a></li>
+                                <li><a href="{% url 'fresh:service' %}"><span><i class="flaticon-start"></i></span> Services</a></li>
+                                <li><a href="{% url 'fresh:blog' %}"><span><i class="flaticon-start"></i></span> News</a></li>
+                                <li><a href="{% url 'fresh:privacy' %}"><span><i class="flaticon-start"></i></span> Privacy</a></li>
+                                <li><a href="{% url 'fresh:contact' %}"><span><i class="flaticon-start"></i></span> Contact </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="tj-footer-widget tj-footer-col-4">
+                        <h4 class="tj-footer-widget-title">Resent Post</h4> 
+                        
+                        {% if recntPost %}
+                        {% for post in recntPost %}
+                        <div class="tj-footer-widget-post">
+                            <div class="tj-footer-widget-post-thumb">
+                                <a href="{% url 'fresh:blogDetails' post.slug %}">
+                                    {% if post.image %}
+                                    <img class="attachment-thumbnail size-thumbnail wp-post-image" src="{{ post.image.url }}" alt="{{ post.name }}">
+                                        {% endif %}
+                                </a>
+                            </div>
+                            <div class="tj-footer-widget-post-content">
+                                <div class="tj-footer-widget-post-date">
+                                    <span><i class="flaticon-calendar"></i>  {{ post.created_at|date:"b d Y" }}</span>
+                                </div>
+                                <h4 class="tj-footer-widget-post-title">
+                                    <a href="{% url 'fresh:blogDetails' post.slug %}">{{ post.name|truncatechars:10 }}</a>
+                                </h4>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tj-footer-copyright">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="tj-footer-copyright-wrapper">
+                    <div class="tj-footer-copyright-content">
+                        <p class="tj-footer-copyright-paragraph">Copyright@ 2024 <a href="https://themeforest.net/user/theme-junction">
+                            FreshFiz.</a> All Rights Reserved.</p>
+                    </div>
+                    <div class="tj-footer-copyright-menu">
+                        <ul>
+                            <li><a href="{% url 'fresh:privacy' %}">Setting & Privacy</a></li>
+                            <!-- <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support </a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

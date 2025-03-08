@@ -1,0 +1,77 @@
+{% load static %}
+
+<div class="hamburger-area d-xl-none">
+    <div class="hamburger_bg"></div>
+    <div class="hamburger_wrapper">
+        <div class="hamburger_top d-flex align-items-center justify-content-between">
+            <div class="hamburger_logo">
+                {% if logo %}
+                            
+                    <a href="/"><img src="{{ logo.logo.url }}" class="mobile_logo" alt="FreshFix" ></a>
+                
+                {% else %}
+
+                {% endif %}
+            </div>
+            <div class="hamburger_close">
+                <button class="hamburger_close_btn"><i class="fa-thin fa-times"></i></button>
+            </div>
+        </div>
+        <!-- <div class="hamburger_search">
+            <form method="get" action="index.html">
+                <button type="submit"><i class="fal fa-search"></i></button>
+                <input type="search" autocomplete="off" name="s" value="" placeholder="Search here">
+            </form>
+        </div> -->
+        <div class="hamburger_menu">
+            <div class="mobile_menu"></div>
+ 
+        </div>
+        <div class="hamburger-infos">
+            <h4 class="hamburger-title">Contact info</h4>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <span><i class="flaticon-email-2"></i></span>
+                </div>
+                <div class="contact-text">
+                    <span>E-mail Us:</span>
+                    <div class="text"><a class="link" href="mailto:{{contactaddress.emailone}}">{{contactaddress.emailone}}</a></div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <span><i class="flaticon-call"></i></span>
+                </div>
+                <div class="contact-text">
+                    <span>Requesting A Call</span>
+                    <div class="text"><a class="link" href="tel:{{contactaddress.phoneone}}">{{contactaddress.phoneone}}</a></div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <span><i class="flaticon-location"></i></span>
+                </div>
+                <div class="contact-text">
+                    <span>Location Here</span>
+                    <div class="text">{{contactaddress.addressone}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="hamburger-socials">
+            <ul>
+                <li>
+                    <a href="{{contactaddress.facebook}}"><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="{{contactaddress.twitter}}"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="{{contactaddress.linkedin}}"><i class="fa-brands fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                    <a href="{{contactaddress.twitter}}"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

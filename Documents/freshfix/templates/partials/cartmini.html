@@ -1,0 +1,81 @@
+{% load static %}
+
+
+<div class="cartmini__area">
+    <div class="cartmini__wrapper d-flex justify-content-between flex-column">
+        <div class="cartmini__top-wrapper ">
+            <div class="cartmini__top p-relative">
+                <div class="cartmini__title">
+                    <h4>Shopping cart</h4>
+                </div>
+                <div class="cartmini__close">
+                    <button type="button" class="cartmini__close-btn cartmini-close-btn"><i class="fal fa-times"></i></button>
+                </div>
+            </div>
+            <div class="cartmini__widget">
+                <div class="cartmini__widget-item">
+                    <div class="cartmini__thumb">
+                        <a href="product-details.html">
+                            <img src="{% static 'assets/images/cart/product-1.jpg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="cartmini__content">
+                        <h5><a href="product-details.html">Level Bolt Smart Lock</a></h5>
+                        <div class="cartmini__price-wrapper">
+                            <span class="cartmini__price">$46.00</span>
+                            <span class="cartmini__quantity">x2</span>
+                        </div>
+                    </div>
+                    <button class="cartmini__del"><i class="fal fa-times"></i></button>
+                </div>
+                <div class="cartmini__widget-item">
+                    <div class="cartmini__thumb">
+                        <a href="product-details.html">
+                            <img src="{% static 'assets/images/cart/product-2.jpg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="cartmini__content">
+                        <h5><a href="product-details.html">Trademil for younger</a></h5>
+                        <div class="cartmini__price-wrapper">
+                            <span class="cartmini__price">$78.00</span>
+                            <span class="cartmini__quantity">x1</span>
+                        </div>
+                    </div>
+                    <button class="cartmini__del"><i class="fal fa-times"></i></button>
+                </div>
+                <div class="cartmini__widget-item">
+                    <div class="cartmini__thumb">
+                        <a href="product-details.html">
+                            <img src="{% static 'assets/images/cart/product-3.jpg' %}" alt="">
+                        </a>
+                    </div>
+                    <div class="cartmini__content">
+                        <h5><a href="product-details.html">ViewSonic VP2756-2K</a></h5>
+                        <div class="cartmini__price-wrapper">
+                            <span class="cartmini__price">$98.00</span>
+                            <span class="cartmini__quantity">x3</span>
+                        </div>
+                    </div>
+                    <button class="cartmini__del"><i class="fal fa-times"></i></button>
+                </div>
+            </div>
+            <!-- for wp -->
+            <!-- if no item in cart -->
+            <div class="cartmini__empty text-center d-none">
+                <p>Your Cart is empty</p>
+                <a href="shop.html" class="cartmini-btn">Go to Shop</a>
+            </div>
+        </div>
+        <div class="cartmini__checkout">
+            <div class="cartmini__checkout-title">
+                <h4>Subtotal:</h4>
+                <span>$113.00</span>
+            </div>
+            <div class="cartmini__checkout-btn">
+                <a href="cart.html" class="cartmini-btn mb-10 w-100"> <span></span> view cart</a>
+                <a href="checkout.html" class="cartmini-btn-border w-100"> <span></span> checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cartmini-overlay"></div>

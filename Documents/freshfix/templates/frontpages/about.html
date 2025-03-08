@@ -1,0 +1,266 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+    <!--End header-->
+    
+    {% block meta_tags %}
+        <meta name="description" content="International School & Job Portal - Admissions and Career Opportunities for Global Students and Professionals">
+        <meta name="keywords" content="International School, Admissions, Job Portal, Career Opportunities, Global Students, Global Jobs, Education, Apply Now, Employment, University, Scholarships">
+        <title>International School & Job Portal - Admissions & Career Opportunities</title>
+    {% endblock meta_tags %}
+
+    
+
+
+{%  block content %}
+
+<body>
+    <div class="body-overlay"></div>
+
+    <!-- Loader Start -->
+ 
+    <!-- Loader End -->
+
+    <!-- back to top start -->
+    {% include 'partials/backtotop.html' %}
+    <!-- back to top end -->
+
+    <!-- Search Popup Start -->
+    {% include 'partials/searchpopup.html' %}
+    <!-- Search Popup End-->
+
+    <!-- cart mini area start -->
+    {% include 'partials/cartmini.html' %}
+    <!-- cart mini area end -->
+
+    <!-- Hamburger start -->
+    {% include 'partials/harmburger.html' %}
+    <!-- Hamburger end -->
+
+    <!-- Header Area Start -->
+    {% include 'partials/header.html' %}
+    <!-- Header Area End-->
+
+    <!-- Sticky Header Area Start -->
+      {% include 'partials/fixedheadertop.html' %}
+    <!-- Sticky Header Area End -->
+
+    <main id="primary" class="site-main">
+
+        <!-- Breadcrumb Area Start-->
+        <section class="tj-breadcrumb-area" data-background="assets/images/breadcrumb/breadcrumb-bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="tj-breadcrumb-content text-center">
+                        <h2 class="tj-breadcrumb-title tj-char-animation">About Us</h2>
+                        <p class="tj-breadcrumb-body"><span><a href="index.html">Home</a></span> <span class="spacing"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1639 8.42265C16.4818 8.74057 16.4818 9.25948 16.1639 9.57739L9.93661 15.8045C9.6182 16.1229 9.10024 16.1229 8.78187 15.8045L8.43354 15.4562C8.11485 15.1375 8.11478 14.6198 8.4335 14.301L13.1574 9.57753C13.4762 9.25884 13.4762 8.74106 13.1574 8.42237L8.43354 3.69885C8.11478 3.38012 8.11481 2.86248 8.43357 2.54375L8.7819 2.19542C9.09982 1.87751 9.61872 1.87751 9.93664 2.19542L16.1639 8.42265ZM3.34094 2.19535C3.02271 1.87708 2.50426 1.87712 2.18602 2.19535L1.8377 2.54368C1.5196 2.86178 1.51957 3.38068 1.8377 3.69881L6.5614 8.42237C6.88012 8.7411 6.88012 9.25881 6.5614 9.57753L1.83766 14.3011C1.51943 14.6193 1.51946 15.138 1.83766 15.4562L2.18599 15.8045C2.50436 16.1229 3.02253 16.1229 3.34091 15.8045L9.01506 10.1302C10.6067 11.7203 10.2041 11.317 9.01622 10.129L9.56782 9.57739C9.88595 9.25926 9.88591 8.74074 9.56782 8.42262L3.34094 2.19535Z" fill="white" />
+                          </svg></span> About Us</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tj-breadcrumb-bg-shape">
+                <img src="{% static 'assets/images/breadcrumb/breadcrumb-bg-shape.png' %}" alt="">
+            </div>
+        </section>
+        <!-- Breadcrumb Area End-->
+
+        <!-- About Area Start-->
+        <section class="tj-about-area">
+            <div class="tj-about-bg-shape">
+                <img class="tj-about-bg-shape-1" src="{% static 'assets/images/about/about-bg-shape-1.png' %}" alt="">
+                <img class="tj-about-bg-shape-2" src="{% static 'assets/images/about/about-bg-shape-2.png' %}" alt="">
+                <img class="tj-about-bg-shape-3" src="{% static 'assets/images/about/about-bg-shape-3.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-5 column_1">
+                        <div class="tj-about-thumb wow fadeInLeft" data-wow-delay=".5s">
+                            <img src="{% static 'assets/images/about/about-thumbs.png' %}" alt="Images">
+                            <div class="tj-about-thumb-shape">
+                                <img class="tj-about-thumb-shape-1" src="{% static 'assets/images/about/about-thumb-shape-1.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-7 col-md-10 column_2">
+                        <div class="tj-about-wrapper wow fadeInRightSlow" data-wow-duration="1400ms">
+                            <div class="tj-section-wrapper">
+                                <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> About Us</h5>
+                                <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">Let Us Handle the Mess You Enjoy the Clean</h2>
+                                <p class="tj-section-paragraph wow fadeInUp" data-wow-delay=".4s">Deep cleaning services go beyond regular maintenance cleaning to tackle areas that are often overlooked, such as baseboards, behind appliances, inside cabinets, and other hard-to-reach</p>
+                            </div>
+                            <div class="tj-about-box wow fadeInUp" data-wow-delay=".5s">
+                                <div class="tj-about-box-thumb">
+                                    <img src="{% static 'assets/images/about/about-box-thumb.png' %}" alt="Images">
+                                    <div class="tj-about-thumb-paly-btn">
+                                        <a class="popup-videos-button" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=MLpWrANjFbI">
+                                            <i class="flaticon-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="tj-about-box-thumb-list">
+                                    <ul>
+                                        <li><span><i class="fa-regular fa-angle-right"></i></span> We Don't Cut Corners, We Clean Them</li>
+                                        <li><span><i class="fa-regular fa-angle-right"></i></span> Bringing Freshness to Your Doorstep</li>
+                                        <li><span><i class="fa-regular fa-angle-right"></i></span> Where Cleanliness Meets Perfection</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tj-about-bottom wow fadeInUp" data-wow-delay=".6s">
+                                <div class="tj-about-btn">
+                                    <a class="tj-primary-btn tj-hover-btn" href="about.html"><span>Read more <i class="flaticon-start"></i></span>
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                                <div class="tj-about-member-details">
+                                    <div class="tj-about-member-details-img">
+                                        <img src="{% static 'assets/images/about/aboutmember.png' %}" alt="Images">
+                                    </div>
+                                    <div class="tj-about-member-details-content">
+                                        <h6 class="tj-about-member-tittle">Brooklyn Simmons</h6>
+                                        <p class="tj-about-member-paragraph">Co-Founder</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Area End-->
+
+        <!-- Before-After Area Start-->
+        <section class="tj-before-after-area">
+            <div class="tj-before-after-bg" data-background="{% static 'assets/images/before-after/before-after0-bg.jpg' %}"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper text-center">
+                            <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> Before & after <span class="two"><i class="flaticon-start"></i></span> </h5>
+                            <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">Recent Completed Projects</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tj-before-after-wrapper wow fadeInUp" data-wow-delay=".5s">
+                            <img src="{% static 'assets/images/before-after/before-after-11.png' %}" alt="">
+                            <img src="{% static 'assets/images/before-after/before-after-21.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Before-After Area End-->
+
+        <!-- Pricing Area Start-->
+        <section class="tj-pricing-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="tj-section-wrapper text-center">
+                            <h5 class="tj-section-subtitle wow fadeInRight" data-wow-delay=".3s"><span class="one"><i class="flaticon-start"></i></span> Pricing plan <span class="two"><i class="flaticon-start"></i></span> </h5>
+                            <h2 class="tj-section-title wow fadeInUp" data-wow-delay=".4s">Choose your Pricing Plan</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-pricing-wrapper wow fadeInUp" data-wow-delay=".5s">
+                            <div class="tj-pricing-price text-center">
+                                <h5 class="tj-pricing-price-subtitle">Basic Plan</h5>
+                                <h2 class="tj-pricing-price-title"><span>$</span>15.22</h2>
+                            </div>
+                            <div class="tj-pricing-icon">
+                                <span><i class="flaticon-label"></i></span>
+                            </div>
+                            <div class="tj-pricing-bottom">
+                                <div class="tj-pricing-list">
+                                    <ul>
+                                        <li><span><i class="flaticon-start"></i></span> Commercial Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> House Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Plumbing Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Kitchen Cleaning</li>
+                                        <li class="inactive"><span><i class="flaticon-start"></i></span> Outdoor Service</li>
+                                        <li class="inactive"><span><i class="flaticon-start"></i></span> Construction Cleanup</li>
+                                    </ul>
+                                </div>
+                                <div class="tj-pricing-button">
+                                    <a class="tj-square-btn tj-hover-btn" href="contact.html">Choose Plan
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-pricing-wrapper active wow fadeInUp" data-wow-delay=".6s">
+                            <div class="tj-pricing-price text-center">
+                                <h5 class="tj-pricing-price-subtitle">Stander Plan</h5>
+                                <h2 class="tj-pricing-price-title"><span>$</span>20.30</h2>
+                            </div>
+                            <div class="tj-pricing-icon">
+                                <span><i class="flaticon-label"></i></span>
+                            </div>
+                            <div class="tj-pricing-bottom">
+                                <div class="tj-pricing-list">
+                                    <ul>
+                                        <li><span><i class="flaticon-start"></i></span> Commercial Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> House Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Plumbing Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Kitchen Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Outdoor Service</li>
+                                        <li class="inactive"><span><i class="flaticon-start"></i></span> Construction Cleanup</li>
+                                    </ul>
+                                </div>
+                                <div class="tj-pricing-button">
+                                    <a class="tj-square-btn active tj-hover-btn" href="contact.html">Choose Plan
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="tj-pricing-wrapper wow fadeInUp" data-wow-delay=".7s">
+                            <div class="tj-pricing-price text-center">
+                                <h5 class="tj-pricing-price-subtitle">Premium Plan</h5>
+                                <h2 class="tj-pricing-price-title"><span>$</span>30.22</h2>
+                            </div>
+                            <div class="tj-pricing-icon">
+                                <span><i class="flaticon-label"></i></span>
+                            </div>
+                            <div class="tj-pricing-bottom">
+                                <div class="tj-pricing-list">
+                                    <ul>
+                                        <li><span><i class="flaticon-start"></i></span> Commercial Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> House Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Plumbing Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Kitchen Cleaning</li>
+                                        <li><span><i class="flaticon-start"></i></span> Outdoor Service</li>
+                                        <li><span><i class="flaticon-start"></i></span> Construction Cleanup</li>
+                                    </ul>
+                                </div>
+                                <div class="tj-pricing-button">
+                                    <a class="tj-square-btn tj-hover-btn" href="contact.html">Choose Plan
+                                        <div class="tj-hover-btn-circle-dot"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing Area End-->
+
+    </main>
+
+    <!-- Footer Area Start-->
+    {% include 'partials/footer.html' %}
+    <!-- Footer Area End-->
+
+ 
+</body>
+
+{% endblock content %}

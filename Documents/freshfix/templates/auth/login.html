@@ -1,0 +1,162 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+<!-- Meta Tags -->
+{% block meta_tags %}
+<meta name="description" content="International School & Job Portal - Admissions and Career Opportunities for Global Students and Professionals">
+<meta name="keywords" content="International School, Admissions, Job Portal, Career Opportunities, Global Students, Global Jobs, Education, Apply Now, Employment, University, Scholarships">
+<title>International School & Job Portal - Admissions & Career Opportunities</title>
+{% endblock meta_tags %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta name="csrf-token" content="{{ csrf_token }}">
+
+<style>
+  body {
+    background-color: #f9fafc;
+    font-family: Arial, sans-serif;
+  }
+
+  .login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  .login-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .login-container input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .login-container input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  .btnclass {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btnclass:hover {
+    background-color: #0056b3;
+  }
+
+  .login-container p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .login-container p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .login-container p a:hover {
+    text-decoration: underline;
+  }
+
+  #response {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #response.success {
+    color: green;
+  }
+
+  #response.error {
+    color: red;
+  }
+</style>
+
+<body>
+  <!-- Include Header and Navigation -->
+  {% include 'partials/header.html' %}
+
+  <main id="primary" class="site-main" style="margin-top: 180px;">
+    <div class="login-container">
+      <h1>Login to Your Account</h1>
+      <form id="loginForm" method="POST" action="{% url 'fresh:login_view' %}">
+        {% csrf_token %}
+        <input type="text" name="email" id="email" placeholder="User Name" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <button type="submit" class="btnclass" id="submit_btn">Login</button>
+        <p>Don’t have an account? <a href="{% url 'fresh:register' %}">Register</a></p>
+        <p>Forgot your password? <a href="{% url 'fresh:check_mail' %}">Reset it here</a></p>
+      </form>
+      <div id="response"></div>
+    </div>
+  </main>
+
+  <!-- Include Footer -->
+  {% include 'partials/footer.html' %}
+
+  <script>
+    $(document).ready(function () {
+      $("#loginForm").on('submit', function (event) {
+        event.preventDefault();
+        $('#submit_btn').text("Logging in...");
+        $('#response').removeClass("success error").text("");
+
+        var formData = $(this).serialize();
+
+        $.ajax({
+          url: $(this).attr('action'),
+          method: $(this).attr('method'),
+          data: formData,
+          dataType: 'json',
+          success: function (response) {
+            if (response.status === "Login successful.") {
+              $('#response').addClass("success").text(response.status);
+              setTimeout(() => {
+                window.location.href = "/";
+              }, 1000);
+            } else {
+              $('#response').addClass("error").text(response.status);
+            }
+            $('#submit_btn').text("Login");
+          },
+          error: function (xhr) {
+            $('#response').addClass("error").text("An error occurred. Please try again.");
+            console.error(xhr.responseText);
+            $('#submit_btn').text("Login");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+{% endblock content %}

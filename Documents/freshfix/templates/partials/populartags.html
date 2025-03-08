@@ -1,0 +1,9 @@
+{% load static %}
+
+
+{% if tags %}
+{% for  tag  in tags %}
+
+<a href="{% url 'fresh:blogByCategory' tag.slug %}"> {{tag.name}} </a>  
+{% endfor %}
+{% endif %}
